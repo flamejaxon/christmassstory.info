@@ -1,0 +1,626 @@
+// FUNCIONES COMUNES
+// ----------------------------------------------------------------------------
+// Cambiamos el document.domain a 'consumer.es'
+// para que podamos acceder a los datos de los iframes desde
+// otros dominios *.consumer.es (http://www.mozilla.org/projects/security/components/same-origin.html)
+document.domain = 'consumer.es';
+
+function getObj(name) {
+  if (document.getElementById && document.getElementById(name)) { return document.getElementById(name); }
+  else if (document.all && document.all[name]) { return document.all[name]; }
+  else if (document.layers && document.layers[name]) { return document.layers[name]; }
+  return null;
+}
+
+var DHTML = (document.getElementById || document.all || document.layers);
+function swapElement(id,type){
+  if (!DHTML) return;
+  
+  if (!type) { type = 'block';};
+  
+  var x = getObj(id);
+  if (x.style.display == "none") { x.style.display = type; }
+  else { x.style.display = "none"; }
+}
+
+function expandMenu(menuPrefix,menuIndex){
+  // Localizamos el elemento de inicio, que a veces no es 1
+  var i = null;
+  for(var inicio = 1; inicio <= 10; inicio++) {
+    if (document.getElementById(menuPrefix+inicio)) {
+      i = inicio;
+      break;
+    }
+  }
+  
+  if (i == null) {
+    return;
+  }
+  
+  while(document.getElementById(menuPrefix+i)) {
+    var x = document.getElementById(menuPrefix+i);
+    if (x != null) {
+      // Si el menu que queremos expandir, lo hacemos
+      if (i == menuIndex) { x.style.display = "block"; }
+      else { x.style.display = "none"; }
+    }
+    i++;
+  }
+}
+
+  
+function expandMenuNumeric(menuPrefix,menuIndex,totalNumOfMenus){
+  if (!DHTML) return;
+  
+  for(i = 1; i <= totalNumOfMenus; i++) {
+    var x = document.getElementById(menuPrefix+i);
+    if (x != null) {
+      // Si el menu que queremos expandir, lo hacemos
+      if (i == menuIndex) { x.style.display = "block"; }
+      else { x.style.display = "none"; }
+    }
+  }
+}
+
+
+// Selecciona un option de un select
+function makeOptionSelected(selectId,optionValue) {
+    selectLength = document.getElementById(selectId).length;
+    for (i = 0;i < selectLength; i++) {
+        if (document.getElementById(selectId)[i].value == optionValue) {
+            document.getElementById(selectId)[i].selected = 'selected';
+        }
+    }
+}
+
+// Recorta una frase
+function textwrap(inputString,maxLength) {
+    if (inputString.length > maxLength) {
+        // Cortamos la cadena a la longitud máxima
+        var inputString = inputString.substr(0, maxLength);
+        // Recortamos si estamos en mitad de una palabra
+        inputString = inputString.substr(0, Math.min(inputString.length, inputString.lastIndexOf(" ")))
+        inputString = inputString + ' ...';
+    }
+    return inputString;
+}
+
+
+
+Array.prototype.in_array = function(p_val) {
+  for(var i = 0, l = this.length; i < l; i++) {
+    if(this[i] == p_val) {
+      return true;
+    }
+  }
+  return false;
+}
+
+
+
+// ----------------------------------------------------------------------------
+// COOKIES
+// ----------------------------------------------------------------------------
+function createCookie(name,value,days) {
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime()+(days*24*60*60*1000));
+    var expires = "; expires="+date.toGMTString();
+  }
+  else expires = "";
+    
+  // Obtenemos el domain
+  if (document.domain.indexOf('fundacioneroski') > -1) {
+      cookieDomain = '.fundacioneroski.es'; 
+  }
+  else {
+      cookieDomain = '.consumer.es'; 
+  }
+  
+//   var domainParts = document.domain.split('.');
+//   var cookieDomain = '.'+domainParts[domainParts.length-2]+'.'+domainParts[domainParts.length-1];
+   
+  // Asignamos la nueva cookie
+  document.cookie = name+"="+value+expires+"; path=/; domain="+cookieDomain;
+}
+
+function readCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0;i < ca.length;i++) {
+    var c = ca[i];
+    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+  }
+  return null;
+}
+
+
+// ----------------------------------------------------------------------------
+// IMPRESION 
+// ----------------------------------------------------------------------------
+function showPrintLink(cssBase,language) {
+  if (language == null || language == "es") { title = "imprimir"; }
+  else if (language == "eu") { title = "inprimatu"; }
+  else if (language == "ca") { title = "imprimir"; }
+  else if (language == "ga") { title = "imprimir"; }
+  
+  var a = document.createElement("a");
+  a.setAttribute("href","#");
+  a.setAttribute("title",title);
+  a.appendChild(document.createTextNode(title));
+  a.onclick = function(e){ showPrintVersion(cssBase,language); return false; }
+
+  // Creamos el li
+  var li = document.createElement("li");
+  li.setAttribute("id","rc-otras-utilidades-imprimir");
+  li.appendChild(a);
+
+  // Añadimos el li a #rc-otras-utilidades, teniendo en cuenta que pueden haber añadido mas enlaces de utilidades
+  if (getObj('rc-otras-utilidades-glosario')) {
+    getObj('rc-otras-utilidades').insertBefore(li,getObj('rc-otras-utilidades-glosario'));
+  }
+  else if (getObj('rc-otras-utilidades-google-plusone')) {
+    getObj('rc-otras-utilidades').insertBefore(li,getObj('rc-otras-utilidades-google-plusone'));
+  }
+  else if (getObj('rc-otras-utilidades-twitter')) {
+      getObj('rc-otras-utilidades').insertBefore(li,getObj('rc-otras-utilidades-twitter'));
+  }
+  else if (getObj('rc-otras-utilidades-addon-1')) {
+    getObj('rc-otras-utilidades').insertBefore(li,getObj('rc-otras-utilidades-addon-1'));
+  }
+  else {
+    getObj('rc-otras-utilidades').appendChild(li);
+  }
+}
+
+function showPrintVersion(cssBase,language) {
+  // Definimos el texto a mostrar
+  if (language == null || language == "es") { textoVolverVersionGrafica = "Volver a la versión gráfica"; }
+  else if (language == "eu") { textoVolverVersionGrafica = "Bertsio grafikora itzuli"; }
+  else if (language == "ca") { textoVolverVersionGrafica = "Tornar a la versió gràfica"; }
+  else if (language == "ga") { textoVolverVersionGrafica = "Volver á versión gráfica"; }
+  
+  // Cargamos el css de impresion
+  var printCss = document.createElement('link');
+  printCss.setAttribute('rel','stylesheet');
+  printCss.setAttribute('type','text/css');
+  printCss.setAttribute('href','http://static.consumer.es/bundle/common~css~red-consumer.print.1024.css+'+cssBase+'~css~global.print.css');
+  printCss.setAttribute('media','screen,print');
+  printCss.setAttribute('id','rc-print-css');
+  document.getElementsByTagName("head")[0].appendChild(printCss);
+  
+   
+  // Mostramos el enlace para volver a la version grafica
+  var p = document.createElement('p');
+  p.setAttribute('id','rc-volver-version-grafica');
+  p.style.display = 'block';
+  var a = document.createElement('a');
+  a.setAttribute('href','#');
+  a.setAttribute('title',textoVolverVersionGrafica);
+  a.appendChild(document.createTextNode(textoVolverVersionGrafica));
+  a.onclick = function(e) { hidePrintVersion(); return false; };
+  p.appendChild(a);
+  getObj('rc-estructura').insertBefore(p,getObj('rc-estructura').firstChild);
+  // document.getElementsByTagName("body")[0].insertBefore(p,document.getElementsByTagName("body")[0].firstChild);
+  
+  // Imprimimos automáticamente la página
+  setTimeout("window.print()",1000);
+}
+
+function hidePrintVersion() {
+  // document.getElementsByTagName("body")[0].removeChild(getObj('rc-volver-version-grafica'));
+  getObj('rc-estructura').removeChild(getObj('rc-volver-version-grafica'));
+  getObj('rc-print-css').disabled = true;
+  document.getElementsByTagName("head")[0].removeChild(getObj('rc-print-css'));
+}
+
+
+// ----------------------------------------------------------------------------
+// CAJA DE BOLETINES
+// ----------------------------------------------------------------------------
+function show_rc_boletines(title,innerHTML,tuEmail) {
+  // Creamos el enlace en sustitucion del input de alta
+  var alta_link = document.createElement("a");  
+  alta_link.setAttribute("href","https://www.consumer.es/boletines/");
+  alta_link.setAttribute("id","rc-boletin-alta");
+  alta_link.setAttribute("hreflang","es");
+  alta_link.setAttribute("title",title);
+  alta_link.innerHTML = innerHTML;
+  getObj('rc-boletin-alta-container').innerHTML = '';
+  getObj('rc-boletin-alta-container').appendChild(alta_link);
+  
+  // Asignamos los eventos a los enlaces
+  getObj('email').onfocus = function(e){ if (getObj('email').value==tuEmail){getObj('email').value = '';} }
+  getObj('rc-boletin-alta').onclick = function(e){ 
+    if (getObj('email').value==tuEmail){getObj('email').value = '';} 
+    newLocation='https://www.consumer.es/boletines/subscribe/?email=' + getObj('email').value;
+    if (getObj('rc-boletin-profile-id')) { newLocation += '&p=' + getObj('rc-boletin-profile-id').value; }
+    if (getObj('rc-boletin-profile-language')) { newLocation += '&l=' + getObj('rc-boletin-profile-language').value; }
+    document.location=newLocation; 
+    return false;
+  }
+  getObj('rc-boletin-baja').onclick = function(e){ 
+    if (getObj('email').value==tuEmail){getObj('email').value = '';} 
+    document.location='https://www.consumer.es/boletines/?email=' + getObj('email').value; 
+    return false;
+  }
+  getObj('rc-boletin-mas-opciones').onclick = function(e){ 
+    if (getObj('email').value==tuEmail){getObj('email').value = '';} 
+    document.location='https://www.consumer.es/boletines/?email=' + getObj('email').value; 
+    return false;
+  }
+}
+
+
+
+
+// ----------------------------------------------------------------------------
+// RC TEMAS DESPLEGABLE
+// ----------------------------------------------------------------------------
+function show_rc_temas_desplegable(channel) {
+  // Mostramos los rc-temas-desplegable-*
+  // getObj('rc-temas-portada').getElementsByTagName('a')[0].onmouseover = function(e) { if (getObj('rc-temas-desplegable-1').style.display == 'block') { swapElement('rc-temas-desplegable-1'); } else { expandMenu('rc-temas-desplegable-',1,10); } return false; }
+
+  // Asignamos las funciones para los eventos de los li
+  getObj('rc-temas-alimentacion').onmouseover = function(e) { getObj('rc-temas-alimentacion-link').className = 'rc-temas-on'; expandMenu('rc-temas-desplegable-',1); return false; }
+  getObj('rc-temas-alimentacion').onmouseout = function(e) { var c_array = ['alimentacion','seguridad-alimentaria']; if (!c_array.in_array(channel)) { getObj('rc-temas-alimentacion-link').className = ''; } if (getObj('rc-temas-desplegable-1').style.display == 'block') { swapElement('rc-temas-desplegable-1'); } }
+  
+  getObj('rc-temas-bebe').onmouseover = function(e) { getObj('rc-temas-bebe-link').className = 'rc-temas-on'; expandMenu('rc-temas-desplegable-',2); return false; }
+  getObj('rc-temas-bebe').onmouseout = function(e) { if (channel != "bebe") { getObj('rc-temas-bebe-link').className = ''; } if (getObj('rc-temas-desplegable-2').style.display == 'block') { swapElement('rc-temas-desplegable-2'); } }
+ 
+  getObj('rc-temas-bricolaje').onmouseover = function(e) { getObj('rc-temas-bricolaje-link').className = 'rc-temas-on'; expandMenu('rc-temas-desplegable-',3); return false; }
+  getObj('rc-temas-bricolaje').onmouseout = function(e) { if (channel != "bricolaje") { getObj('rc-temas-bricolaje-link').className = ''; } if (getObj('rc-temas-desplegable-3').style.display == 'block') { swapElement('rc-temas-desplegable-3'); } }
+
+  getObj('rc-temas-economia-domestica').onmouseover = function(e) { getObj('rc-temas-economia-domestica-link').className = 'rc-temas-on'; expandMenu('rc-temas-desplegable-',4); return false; }
+  getObj('rc-temas-economia-domestica').onmouseout = function(e) { var c_array = ['economia-domestica','motor','viajes','vivienda']; if (!c_array.in_array(channel)) { getObj('rc-temas-economia-domestica-link').className = ''; } if (getObj('rc-temas-desplegable-4').style.display == 'block') { swapElement('rc-temas-desplegable-4'); } }
+ 
+  getObj('rc-temas-educacion').onmouseover = function(e) { getObj('rc-temas-educacion-link').className = 'rc-temas-on'; expandMenu('rc-temas-desplegable-',5); return false; }
+  getObj('rc-temas-educacion').onmouseout = function(e) { if (channel != "educacion") { getObj('rc-temas-educacion-link').className = ''; } if (getObj('rc-temas-desplegable-5').style.display == 'block') { swapElement('rc-temas-desplegable-5'); } }
+  
+  getObj('rc-temas-mascotas').onmouseover = function(e) { getObj('rc-temas-mascotas-link').className = 'rc-temas-on'; expandMenu('rc-temas-desplegable-',6); return false; }
+  getObj('rc-temas-mascotas').onmouseout = function(e) { if (channel != "mascotas") { getObj('rc-temas-mascotas-link').className = ''; } if (getObj('rc-temas-desplegable-6').style.display == 'block') { swapElement('rc-temas-desplegable-6'); } }
+ 
+  getObj('rc-temas-medio-ambiente').onmouseover = function(e) { getObj('rc-temas-medio-ambiente-link').className = 'rc-temas-on'; expandMenu('rc-temas-desplegable-',7); return false; }
+  getObj('rc-temas-medio-ambiente').onmouseout = function(e) { if (channel != "medio-ambiente") { getObj('rc-temas-medio-ambiente-link').className = ''; } if (getObj('rc-temas-desplegable-7').style.display == 'block') { swapElement('rc-temas-desplegable-7'); } }
+ 
+  getObj('rc-temas-salud').onmouseover = function(e) { getObj('rc-temas-salud-link').className = 'rc-temas-on'; expandMenu('rc-temas-desplegable-',8); return false; }
+  getObj('rc-temas-salud').onmouseout = function(e) { if (channel != "salud") { getObj('rc-temas-salud-link').className = ''; } if (getObj('rc-temas-desplegable-8').style.display == 'block') { swapElement('rc-temas-desplegable-8'); } }
+ 
+  getObj('rc-temas-seguridad-alimentaria').onmouseover = function(e) { getObj('rc-temas-seguridad-alimentaria-link').className = 'rc-temas-on'; expandMenu('rc-temas-desplegable-',9); return false; }
+  getObj('rc-temas-seguridad-alimentaria').onmouseout = function(e) { if (channel != "seguridad-alimentaria") { getObj('rc-temas-seguridad-alimentaria-link').className = ''; } if (getObj('rc-temas-desplegable-9').style.display == 'block') { swapElement('rc-temas-desplegable-9'); } }
+ 
+  getObj('rc-temas-solidaridad').onmouseover = function(e) { getObj('rc-temas-solidaridad-link').className = 'rc-temas-on'; expandMenu('rc-temas-desplegable-',10); return false; }
+  getObj('rc-temas-solidaridad').onmouseout = function(e) { if (channel != "solidaridad") { getObj('rc-temas-solidaridad-link').className = ''; } if (getObj('rc-temas-desplegable-10').style.display == 'block') { swapElement('rc-temas-desplegable-10'); } }
+  
+  getObj('rc-temas-tecnologia').onmouseover = function(e) { getObj('rc-temas-tecnologia-link').className = 'rc-temas-on'; expandMenu('rc-temas-desplegable-',11); return false; }
+  getObj('rc-temas-tecnologia').onmouseout = function(e) { if (channel != "tecnologia") { getObj('rc-temas-tecnologia-link').className = ''; } if (getObj('rc-temas-desplegable-11').style.display == 'block') { swapElement('rc-temas-desplegable-11'); } }
+
+  // Asignamos las funciones para los eventos del cuerpo del menú
+  getObj('rc-temas-desplegable-1').onmouseover = function(e) { getObj('rc-temas-alimentacion-link').className = 'rc-temas-on'; getObj('rc-temas-desplegable-1').style.display = 'block'; return false; }
+  getObj('rc-temas-desplegable-1').onmouseout = function(e) { var c_array = ['alimentacion','seguridad-alimentaria']; if (!c_array.in_array(channel)) { getObj('rc-temas-alimentacion-link').className = ''; } getObj('rc-temas-desplegable-1').style.display = 'none'; return false; }
+
+  getObj('rc-temas-desplegable-2').onmouseover = function(e) { getObj('rc-temas-bebe-link').className = 'rc-temas-on'; getObj('rc-temas-desplegable-2').style.display = 'block'; return false; }
+  getObj('rc-temas-desplegable-2').onmouseout = function(e) { if (channel != "bebe") { getObj('rc-temas-bebe-link').className = ''; } getObj('rc-temas-desplegable-2').style.display = 'none'; return false; }
+  
+  getObj('rc-temas-desplegable-3').onmouseover = function(e) { getObj('rc-temas-bricolaje-link').className = 'rc-temas-on'; getObj('rc-temas-desplegable-3').style.display = 'block'; return false; }
+  getObj('rc-temas-desplegable-3').onmouseout = function(e) { if (channel != "bricolaje") { getObj('rc-temas-bricolaje-link').className = ''; } getObj('rc-temas-desplegable-3').style.display = 'none'; return false; }
+  
+  getObj('rc-temas-desplegable-4').onmouseover = function(e) { getObj('rc-temas-economia-domestica-link').className = 'rc-temas-on'; getObj('rc-temas-desplegable-4').style.display = 'block'; return false; }
+  getObj('rc-temas-desplegable-4').onmouseout = function(e) {  var c_array = ['economia-domestica','motor','viajes','vivienda']; if (!c_array.in_array(channel)) { getObj('rc-temas-economia-domestica-link').className = ''; } getObj('rc-temas-desplegable-4').style.display = 'none'; return false; }
+  
+  getObj('rc-temas-desplegable-5').onmouseover = function(e) { getObj('rc-temas-educacion-link').className = 'rc-temas-on'; getObj('rc-temas-desplegable-5').style.display = 'block'; return false; }
+  getObj('rc-temas-desplegable-5').onmouseout = function(e) { if (channel != "educacion") { getObj('rc-temas-educacion-link').className = ''; } getObj('rc-temas-desplegable-5').style.display = 'none'; return false; }
+  
+  getObj('rc-temas-desplegable-6').onmouseover = function(e) { getObj('rc-temas-mascotas-link').className = 'rc-temas-on'; getObj('rc-temas-desplegable-6').style.display = 'block'; return false; }
+  getObj('rc-temas-desplegable-6').onmouseout = function(e) { if (channel != "mascotas") { getObj('rc-temas-mascotas-link').className = ''; } getObj('rc-temas-desplegable-6').style.display = 'none'; return false; }
+  
+  getObj('rc-temas-desplegable-7').onmouseover = function(e) { getObj('rc-temas-medio-ambiente-link').className = 'rc-temas-on'; getObj('rc-temas-desplegable-7').style.display = 'block'; return false; }
+  getObj('rc-temas-desplegable-7').onmouseout = function(e) { if (channel != "medio-ambiente") { getObj('rc-temas-medio-ambiente-link').className = ''; } getObj('rc-temas-desplegable-7').style.display = 'none'; return false; }
+
+  getObj('rc-temas-desplegable-8').onmouseover = function(e) { getObj('rc-temas-salud-link').className = 'rc-temas-on'; getObj('rc-temas-desplegable-8').style.display = 'block'; return false; }
+  getObj('rc-temas-desplegable-8').onmouseout = function(e) { if (channel != "salud") { getObj('rc-temas-salud-link').className = ''; } getObj('rc-temas-desplegable-8').style.display = 'none'; return false; }
+  
+  getObj('rc-temas-desplegable-9').onmouseover = function(e) { getObj('rc-temas-seguridad-alimentaria-link').className = 'rc-temas-on'; getObj('rc-temas-desplegable-9').style.display = 'block'; return false; }
+  getObj('rc-temas-desplegable-9').onmouseout = function(e) { getObj('rc-temas-seguridad-alimentaria-link').className = ''; getObj('rc-temas-desplegable-9').style.display = 'none'; return false; }
+  
+  getObj('rc-temas-desplegable-10').onmouseover = function(e) { getObj('rc-temas-solidaridad-link').className = 'rc-temas-on'; getObj('rc-temas-desplegable-10').style.display = 'block'; return false; }
+  getObj('rc-temas-desplegable-10').onmouseout = function(e) { if (channel != "solidaridad") { getObj('rc-temas-solidaridad-link').className = ''; } getObj('rc-temas-desplegable-10').style.display = 'none'; return false; }
+  
+  getObj('rc-temas-desplegable-11').onmouseover = function(e) { getObj('rc-temas-tecnologia-link').className = 'rc-temas-on'; getObj('rc-temas-desplegable-11').style.display = 'block'; return false; }
+  getObj('rc-temas-desplegable-11').onmouseout = function(e) { if (channel != "tecnologia") { getObj('rc-temas-tecnologia-link').className = ''; } getObj('rc-temas-desplegable-11').style.display = 'none'; return false; }
+}
+
+
+// ----------------------------------------------------------------------------
+// RC CANALES FORMATOS
+// ----------------------------------------------------------------------------
+function show_rc_canales_formatos() {
+  // Ocultamos el menu
+  if (getObj('rc-canales-formatos')) {
+    getObj('rc-canales-formatos').style.display = 'none';
+        
+    // Obtenemos el valor original del span "rc-canales-secciones-mas"
+    var originalString = getObj('rc-canales-secciones-mas').innerHTML;
+    
+    // Creamos el enlace de "Mas" en sustitucion del span que ya existe
+    var a = document.createElement("a");  
+    a.setAttribute("href","#");
+    a.setAttribute("id","rc-canales-secciones-mas-link");
+    a.setAttribute("class","rc-canales-secciones-mas-down");
+    a.className = "rc-canales-secciones-mas-down";
+    a.appendChild(document.createTextNode(originalString));
+    a.onclick = function(e) { 
+      swapElement('rc-canales-formatos'); 
+      if (getObj("rc-canales-secciones-mas-link").getAttribute('class') == 'rc-canales-secciones-mas-down') {
+        getObj("rc-canales-secciones-mas-link").setAttribute('class',"rc-canales-secciones-mas-up");
+        getObj("rc-canales-secciones-mas-link").className = "rc-canales-secciones-mas-up";
+      }
+      else {
+        getObj("rc-canales-secciones-mas-link").setAttribute('class',"rc-canales-secciones-mas-down");
+        getObj("rc-canales-secciones-mas-link").className = "rc-canales-secciones-mas-down";
+      }
+      return false; 
+    }
+        
+    // Borramos el valor original del span
+    getObj('rc-canales-secciones-mas').innerHTML = '';
+  
+    // Asignamos el nuevo valor al span
+    getObj('rc-canales-secciones-mas').appendChild(a);
+        
+    // Mostramos el span
+    getObj('rc-canales-secciones-mas').style.display = 'inline';
+  }
+}
+
+
+
+// ----------------------------------------------------------------------------
+// RC-CONTENIDOS-DESTACADOS
+// ----------------------------------------------------------------------------
+function show_rc_contenidos_destacados(channel) {
+  // Vemos cuando ha sido la última vez que accedimos
+  // Tenemos dos cookies:
+  // 1) lastSession: es una cookie de sesion, que se elimina cada vez que se cierra el navegador
+  // 2) lastPageView: es persistente, y guarda la fecha del acceso que estamos produciendo ahora mismo, con lo que siempre se actualiza
+  // lastSession solo se actualiza cuando comienza una nueva sesion, y toma su valor de lastPageView
+  // ---------------------------------------------------------------------------------------------------
+  var firstRun = false;
+  var now = new Date();
+  var nowTime = now.getTime();
+  var lastSession = readCookie("lastSession");
+  var lastPageView = readCookie("lastPageView");
+
+  // Si lastPageView no existe, es que es la primera vez que se ejecuta este codigo, por lo que usamos la fecha actual
+  if (!lastPageView) {
+    lastPageView = nowTime;
+    firstRun = true;
+  }
+
+  // Si lastSession no existe, es que estamos al comienzo de una sesion
+  if (!lastSession) {
+    // Si es la primera vez que se ejecuta este codigo, definimos que la ultima sesion se produjo
+    // hace mucho (valor 1) para que se entienda que este es un usuario no habitual
+    if (firstRun) {
+      lastSession = 1;
+    }
+    // Si el codigo ya se ha ejecutado mas veces, usamos el valor de la ultima pagina vista en la anterior sesion
+    else {
+      lastSession = lastPageView;
+    }
+    createCookie("lastSession", lastSession);
+  }
+
+  // Pase lo que pase, siempre actualizamos el valor de lastPageView con la fecha actual
+  createCookie("lastPageView",nowTime,365);
+
+  // Ahora vemos si han pasado más de 15 días desde la última sesión
+  var destacadosUrl;
+  if (nowTime - lastSession > (15*24*60*60*1000)) {
+    destacadosUrl = 'lo-mas-leido-unusual-visitor.php';
+  }
+  else {
+    if (channel == '') {
+      destacadosUrl = 'lo-mas-leido-usual-visitor.php';
+    }
+    else {
+      destacadosUrl = 'lo-mas-leido-usual-visitor.php?channel='+channel;
+    }
+  }
+
+
+  // Vemos cuando fue la última vez que mostramos la columna lateral destacada corporativa
+  // Si han pasado mas de 15 dias, la volvemos a mostrar
+  // Tenemos una cookie:
+  // 1) lastCorpView: es persistente, guarda la fecha de la ultima vez que mostramos la columna lateral
+  // destacada corporativa
+  // ---------------------------------------------------------------------------------------------------
+  var now = new Date();
+  var nowTime = now.getTime();
+  var lastCorpView = readCookie("lastCorpView");
+  // Ahora vemos si han pasado más de 15 días desde la última vez que se vio la columna corporativa
+  if (nowTime - lastCorpView > (15*24*60*60*1000)) {
+    destacadosUrl = 'corporativo.php';
+    // Actualizamos el valor de la cookie
+    createCookie("lastCorpView",nowTime,365);
+  }
+
+  // Si estamos en IE5.01, cargamos un iframe directamente, si no lo hacemos con DOM
+  var ua = navigator.appName+navigator.appVersion;
+  if (ua.indexOf('MSIE 5.01') != -1) {
+    getObj('rc-contenidos-destacados-container').innerHTML = '<iframe src="https://www.consumer.es/destacados/'+destacadosUrl+'" frameBorder="0" scrolling="no" name="rc-contenidos-destacados" id="rc-contenidos-destacados" width="100%"><'+'/iframe>';
+  }
+  else {
+    // Creamos el iframe que carga la portada actual
+    var contenidosDestacadosIframe = document.createElement("iframe");  
+    contenidosDestacadosIframe.setAttribute("src","https://www.consumer.es/destacados/"+destacadosUrl);
+    contenidosDestacadosIframe.setAttribute("frameBorder","0");
+    contenidosDestacadosIframe.setAttribute("scrolling","no");
+    contenidosDestacadosIframe.setAttribute("name","rc-contenidos-destacados");
+    contenidosDestacadosIframe.setAttribute("id","rc-contenidos-destacados");
+    contenidosDestacadosIframe.style.width = '100%';
+  
+    // Ponemos el iframe dentro de su contenedor
+    getObj('rc-contenidos-destacados-container').appendChild(contenidosDestacadosIframe);
+  }
+}
+
+
+
+// ----------------------------------------------------------------------------
+// FACEBOOK
+// ----------------------------------------------------------------------------
+function showFBLikeButton(instance,href,language) {
+  // Creamos el tag iframe de facebook
+  var iframe = document.createElement("iframe");  
+  iframe.setAttribute("src","http://www.facebook.com/plugins/like.php?href="+href+"&layout=standard&show_faces=false&width=550&action=like&colorscheme=light&height=30&locale="+language+"_ES");
+  iframe.setAttribute("scrolling","no");
+  iframe.setAttribute("frameBorder","0");
+  iframe.setAttribute("width","550");
+  iframe.setAttribute("height","30");
+  iframe.setAttribute("style","border:none; overflow:hidden; width:550px; height:30px;");
+  iframe.setAttribute("allowTransparency","true");
+  // Ponemos el tag dentro de su contenedor
+  document.getElementById('rc-facebook-like-container'+instance).appendChild(iframe);
+}
+
+function showFBLikeButton2(language) {
+  var detectada = null;
+  var version = null;
+  if (navigator.appVersion.indexOf("MSIE") != -1) {
+    detectada = navigator.appVersion.split("MSIE"); // Primero detectamos que se trata de IE en realidad
+    version = parseFloat(detectada[1]); // Luego obtenemos el numero de version
+  }
+  if (version == null || version >= 7.0) {
+    document.write('<fb:like layout="button_count" show_faces="true" width="110"></fb:like>');
+  }
+}
+
+
+
+// ----------------------------------------------------------------------------
+// PNG TRANSPARENTE 
+// ----------------------------------------------------------------------------
+function doPngFixIE() {
+  //alert(document.images.length);
+  var detectada = navigator.appVersion.split("MSIE"); //Primero detectamos que se trata de IE en realidad
+  var version = parseFloat(detectada[1]); //Luego obtenemos el numero de version
+	
+  //	alert(version);
+	
+  if (version >= 5.5 && version < 7.0 && document.body.filters) //Preguntamos por la version 5.5 o superior o si existe el elemento filters
+  {
+    for(var i = document.images.length - 1; i >= 0; i--) // Analizamos todas las imagenes del documento
+    {
+      //alert(i);
+      //alert(document.images);
+			
+      var img = document.images[i]; //Tomamos el nombre de la imagen actual en el ciclo
+      var imgName = img.src.toLowerCase(); //convertimos a minusculas
+      	
+      //alert(imgName);
+      	
+      if (imgName.substring(imgName.length-10, imgName.length) == ".trans.png") //detectamos la extension
+      {
+        var strHTML = "<span " + " class=\"" + img.className +"\" style=\"display:inline-block;" + "width:" + img.width + "px; height:" + img.height + "px;" + "filter:progid:DXImageTransform.Microsoft.AlphaImageLoader" + "(src=\'" + img.src + "\', sizingMethod='image');\"></span>" 
+        img.outerHTML = strHTML //Luego obligamos a la imagen a cargar este codigo en forma de variable
+        //alert(strHTML);
+      }
+    }
+  }
+}
+
+if (window.addEventListener) { window.addEventListener('load',doPngFixIE,false); }
+else if (window.attachEvent) { window.attachEvent('onload',doPngFixIE); }
+
+
+// ----------------------------------------------------------------------------
+// AJAX
+// ----------------------------------------------------------------------------
+function getAjaxData(url,callbackFunction,callbackFunctionParams) {
+  
+  if (window.XMLHttpRequest) { // Mozilla, Safari,...
+    AJAX = new XMLHttpRequest();
+    if (AJAX.overrideMimeType) {
+      // set type accordingly to anticipated content type
+      //AJAX.overrideMimeType('text/xml');
+      AJAX.overrideMimeType('text/html');
+    }
+  } else if (window.ActiveXObject) { // IE
+    try {
+      AJAX = new ActiveXObject("Msxml2.XMLHTTP");
+    } catch (e) {
+      try {
+        AJAX = new ActiveXObject("Microsoft.XMLHTTP");
+      } catch (e) {}
+    }
+  }
+  if (!AJAX) {
+    // alert('Cannot create XMLHTTP instance');
+    return false;
+  }
+
+  // Hacemos la peticion
+  AJAX.onreadystatechange=function() {
+    if (AJAX.readyState==4) {
+      response = AJAX.responseText;
+      response = response.replace(/^\s*|\s*$/g,"");
+      response = response.replace(/\n/g,'');
+      response = response.replace(/\r/g,'');
+      response = response.replace(/"/g,'&quot;');
+      if (callbackFunctionParams == null) {
+        eval(callbackFunction+'("'+response+'")');
+      }
+      else {
+        eval(callbackFunction+'("'+response+'","'+callbackFunctionParams+'")');
+      }
+    }
+  }
+  AJAX.open('GET',url,true);
+  AJAX.send(null)
+    
+}
+
+
+// ----------------------------------------------------------------------------
+// DISQUS
+// ----------------------------------------------------------------------------
+/*
+function disqus_getThreadDetails(threadId,forum,htmlElement) {
+  if (!forum) {
+    forum = 'eroskiconsumer';
+  }
+  
+  // Dependiendo del formato de threadId, pasamos el parámetro de una u otra forma
+  // Caso 1: url o disqus_identifier
+  if (threadId.indexOf('link=') != -1 || threadId.indexOf('ident=') != -1) {
+    threadIdParam = 'thread:'+threadId;
+  }
+  // Caso 2: id normal 
+  else {
+    threadIdParam = 'thread='+threadId;
+  }
+  
+  getAjaxData('http://disqus.com/api/3.0/threads/details.json?'+threadIdParam+'&forum='+forum+'&api_key=fRZqFfbslqHS5cXKxqJ51UtTMqBlG7CextRHkaYBGht1f6I7awV5GqEYy4Yf38yD',disqus_threadPostCountPostProcess);
+}
+
+function disqus_getThreadPostCount(threadId,htmlElement) {
+  disqus_getThreadDetails(threadId,null,htmlElement);
+}
+
+function disqus_threadPostCountPostProcess(response) {
+  alert(response);
+}
+
+function disqus_showThreadPostCount() {
+  links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if(links[i].href.indexOf("#disqus_thread") != -1) {
+      threadId = links[i].href.replace("#disqus_thread","");
+      disqus_getThreadPostCount(threadId,links[i]);
+    }
+  }
+}
+*/
+

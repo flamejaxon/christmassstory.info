@@ -1,0 +1,772 @@
+/* COMUN A TODO EL PROYECTO CONSUMER EROSKI. PREFIJO "rc-" */
+body{font:125%/100% arial,helvetica,sans-serif;color:#000;background-color:#fff;margin:0} /* En #rc-estructura definimos font-size:0.5em; para que sea 62.5% */
+hr{display:none}
+a{text-decoration:none;color:#00c2e6}
+a:hover{color:#666;text-decoration:underline}
+img{border:0}
+
+/* HEADINGS */
+h1,h2,h3,h4,h5,h6{margin:0;padding:0;font-size:1em}
+#rc-contenido h1{font-size:2.4em;line-height:1.2em}
+#rc-contenido h2{font-size:2.2em;line-height:1.2em}
+#rc-contenido h3{font-size:2.0em;line-height:1.2em}
+#rc-contenido h4{font-size:1.8em;line-height:1.2em}
+#rc-contenido h5{font-size:1.6em;line-height:1.2em}
+#rc-contenido h6{font-size:1.2em;line-height:1.2em}
+
+/* FORMS */  
+form{margin:0;padding:0}
+form input,form textarea,form select{font-size:1.4em;line-height:normal;font-family:arial,helvetica,sans-serif;color:#000;border:0.08333em solid #ccc;background:#fff url(/wp-content/uploads/static/common/imgs/bk.difuminado-1.png) 0 0 repeat-x;}
+form fieldset{border:0;margin:0;padding:0}
+
+/* CLASES COMUNES*/
+/* Hay que rodear el hr con un div, para crear un border en blanco y que IE no muestre el hr, ya que IE hace espacios*/
+div.rc-separador1, div.rc-separador2, div.rc-separador4{clear:both;margin:0;padding:0}
+div.rc-separador1{border-bottom:0.1em solid #fff}
+div.rc-separador2{border-bottom:0.1em dashed #ccc}
+div.rc-separador3{border-bottom:0.1em solid #ccc}
+div.rc-separador4{border-bottom:0.1em dotted #ccc}
+.rc-ladillo-pretextual{font-weight:bold}
+.rc-elemento-accesorio{display:none}
+a.rc-enlace-externo{background:url(/wp-content/uploads/static/common/imgs/external.png) right center no-repeat;padding-right:1.2em}
+a.rc-enlace-email{background:url(/wp-content/uploads/static/common/imgs/ico.email.png) right center no-repeat;padding-right:1.6em}
+.rc-bloque-enfatizado{font-size:1.2em;line-height:1.3em;padding:1em;background-color:#f5f5f5;border:solid 0.1em #ccc;overflow:hidden}
+div.rc-bloque-enfatizado{margin-top:1em} /* Cuando es un div hay que darle un margin para que no se pegue*/
+.rc-warning{font-weight:bold;color:#c00} 
+/* destacados */
+#rc-contenido h2 + blockquote.rc-destacadoX{margin-top:1em}
+#rc-contenido blockquote.rc-destacado{display:block;float:left;text-align:right;width:15em;padding:1em 0;margin:0 2em 1em 0;background-color:#eaeaea}
+#rc-contenido blockquote.rc-destacado p{margin:0;padding:0.5em 1em;color:#858585;font-family:georgia,times,serif;font-weight:bold;font-style:italic;border-top:0.1em solid #ccc;border-bottom:0.1em solid #ccc}
+/* citas */
+#rc-contenido cite.rc-cita{font-size:1.7em;line-height:1.2em;display:block;padding:1em 2em;margin:1em 0;border-width:0 0 0 0.1764em;border-style:solid;background-color:transparent}
+
+/* COLORES SEGUN CANALES. SE DEFINEN TODAS LAS OPCIONES POSIBLES, QUE LUEGO SE DESACTIVARAN EN CADA WEB LOCAL */
+.rc-canal-inicio{color:#D50018;border-color:#D50018;background-color:#D50018;}
+.rc-canal-alimentacion{color:#e20a16;border-color:#e20a16;background-color:#e20a16;}
+.rc-canal-bricolaje{color:#9C6940;border-color:#9C6940;background-color:#9C6940;}
+.rc-canal-economia-domestica{color:#33393c;border-color:#33393c;background-color:#33393c;}
+.rc-canal-educacion{color:#A97EC9;border-color:#A97EC9;background-color:#A97EC9;}
+.rc-canal-medio-ambiente{color:#58ab27;border-color:#58ab27;background-color:#58ab27;}
+.rc-canal-motor{color:#33393c;border-color:#33393c;background-color:#33393c;}
+.rc-canal-tecnologia{color:#2D7FBB;border-color:#2D7FBB;background-color:#2D7FBB;}
+.rc-canal-salud{color:#00aee6;border-color:#00aee6;background-color:#00aee6}
+.rc-canal-seguridad-alimentaria{color:#e89c2d;border-color:#e89c2d;background-color:#e89c2d;}
+.rc-canal-solidaridad{color:#BABA01;border-color:#BABA01;background-color:#BABA01;}
+.rc-canal-viajes{color:#33393c;border-color:#33393c;background-color:#33393c;}
+.rc-canal-vivienda{color:#33393c;border-color:#33393c;background-color:#33393c;}
+.rc-canal-eroski{color:#E2001A;border-color:#E2001A;background-color:#E2001A;}
+.rc-canal-bebe{color:#F66F02;border-color:#F66F02;background-color:#F66F02;}
+.rc-canal-mascotas{color:#D5AA00;border-color:#D5AA00;background-color:#D5AA00;}
+
+
+/* ESTRUCTURA */  
+#rc-estructura{font-size:0.5em;overflow:hidden;line-height:1.3em;clear:both}
+
+/* RC-BARRA-VIDEO */
+#rc-barra-video{width:100%;margin:0 auto;overflow:hidden;background:url("/wp-content/uploads/static/www/tv/imgs/bk.temas.png") left top repeat-x;}
+#rc-temas-video {width:94em;float:none;margin:0 auto;padding:0 0 0 10em;overflow:hidden;text-align:center;list-style:none;}
+#rc-temas-video li{width:auto;float:left;padding:1em 0.8em;border-right:none;background:url("/wp-content/uploads/static/www/tv/imgs/bk.menu-border.png") left top no-repeat;}
+#rc-temas-video li a{font-size:1.2em;font-weight:bold;color:#fff}
+#rc-temas-video li a:hover{text-decoration:none;color:#333;}
+#rc-temas-video li#rc-temas-video-eroski{border-right:0.1em solid #6d6d6d;padding-right:0.8em;}
+#rc-temas-video li.rc-temas-on a{text-decoration:underline}
+
+/* RC-BARRA */
+#rc-temas{list-style:none;margin:0.4em 0 0 0;padding:0;}
+#rc-temas li{display:inline;padding:0 0.3em;border-right:0.1em solid #fff}
+#rc-temas li a{font-size:1.1em;line-height:1.2em;font-weight:bold;color:#fff}
+#rc-temas li.rc-temas-on a{text-decoration:underline}
+#rc-temas li#rc-temas-webtv{padding-right:0;border:none}
+#rc-barra-logo-fundacion{width:13.5em;margin-top:1.8em;float:right;}
+#rc-barra-logo-fundacion img{width:13.5em;display:block}
+
+
+/* RC-CABECERA */
+#rc-cabecera-container{background-color:#fff;}
+#rc-cabecera{width:98em;padding-top:1em;margin:0 auto;overflow:hidden;}
+
+#rc-cabecera .cabecera-menu {background:#fff;}
+/*#rc-cabecera .cabecera-menu {background:#fff url('/wp-content/uploads/static/www/navidad/2013/imgs/bk.navidad2013.png') left top no-repeat;}*/
+
+#rc-cabecera-site-local a{color:#333}
+#rc-cabecera-site-local a:hover{text-decoration:none}
+.rc-channel-alimentacion #rc-cabecera-site-local a{color:#e20a17}
+.rc-channel-alimentacion #rc-cabecera-site-local-buscador-container{width:98em;padding-top:1em;margin:0 auto;overflow:hidden;background:url(/wp-content/uploads/static/common/imgs/bk.cabecera-alimentacion.png) 63% bottom no-repeat;}
+.rc-channel-bebe #rc-cabecera-site-local a{color:#fff}
+.rc-channel-bebe #rc-cabecera-canal-tv{float:right;margin:-1.2em 0 0 0;padding:1.5em 6em 0.5em 0;width:18em;float:right;text-align:right;background:url(/wp-content/uploads/static/common/imgs/ico.tv.png) right 0.5em no-repeat;}
+.rc-channel-bebe #rc-cabecera-canal-tv a{font-size:1.4em;line-height:1em;font-weight:bold;color:#eee;}
+.rc-channel-bricolaje #rc-cabecera-site-local-buscador-container{width:98em;padding:1em 0 1.2em 0;margin:0 auto;overflow:hidden;}
+.rc-channel-bricolaje #rc-cabecera-site-local a{color:#9C6940;font-family:"Droid Sans",arial,helvetica}
+.rc-channel-economia-domestica #rc-cabecera-site-local a{color:#fff}
+.rc-channel-motor #rc-cabecera-site-local a{color:#fff}
+.rc-channel-viajes #rc-cabecera-site-local a{color:#fff}
+.rc-channel-vivienda #rc-cabecera-site-local a{color:#fff}
+.rc-channel-educacion #rc-cabecera-site-local-buscador-container{width:98em;padding-top:1em;margin:0 auto;overflow:hidden;background:url(/wp-content/uploads/static/common/imgs/bk.cabecera-educacion.png) 59% bottom no-repeat;}
+.rc-channel-medio-ambiente #rc-cabecera-site-local a{color:#fff}
+.rc-channel-salud #rc-cabecera-site-local a{color:#fff}
+.rc-channel-salud #rc-cabecera-site-local-buscador-container{width:98em;margin:0 auto;overflow:hidden;}
+.rc-channel-seguridad-alimentaria #rc-cabecera-site-local a{color:#e89c2d}
+.rc-channel-seguridad-alimentaria #rc-cabecera-site-local-buscador-container{width:98em;padding-top:1em;margin:0 auto;overflow:hidden;background:url(/wp-content/uploads/static/common/imgs/bk.cabecera-seguridad-alimentaria.jpg) 83% bottom no-repeat;}
+.rc-channel-tecnologia #rc-cabecera-site-local a{color:#fff}
+#rc-site-name-texto-pre{display:block;float:left;clear:both;font-size:2.4em;line-height:1em;font-weight:bold;padding:0 0.4em;}
+#rc-site-name-texto{display:block;float:left;clear:both;font-size:3.4em;line-height:1em;font-weight:bold;padding:0 0.2em;}
+.rc-channel-alimentacion #rc-site-name-texto-pre {background:none;padding:0.36em 0 0 0;}
+.rc-channel-alimentacion #rc-site-name-texto{background:none;display:inline;float:none;clear:none}
+.rc-channel-bricolaje #rc-site-name-texto-pre{font-size:2.8em;line-height:1em;background:none;padding:0;}
+.rc-channel-bricolaje #rc-site-name-texto{font-size:2.8em;line-height:1em;background:none;display:inline;float:none;clear:none}
+.rc-channel-seguridad-alimentaria #rc-site-name-texto-pre {background:none;padding:0.36em 0 0 0;}
+.rc-channel-seguridad-alimentaria #rc-site-name-texto{background:none;display:inline;float:none;clear:none}
+.rc-channel-bebe #rc-site-name-texto-pre {background:none;padding:0.5em 0 0 0;}
+.rc-channel-bebe #rc-site-name-texto {background:none;padding:0.1em 0.2em 0 0.2em;display:inline;clear:none;}
+.rc-channel-salud #rc-site-name-texto-pre {background:none;padding:0.36em 0 0 0;}
+.rc-channel-salud #rc-site-name-texto{background:none;display:inline;float:none;clear:none}
+.rc-channel-economia-domestica #rc-site-name-texto-pre {background:none;padding:0.36em 0 0 0;}
+.rc-channel-economia-domestica #rc-site-name-texto{background:none;display:inline;float:none;clear:none}
+.rc-channel-educacion #rc-site-name-texto-pre {background:none;color:#A97EC9;padding:0.5em 0 0 0;}
+.rc-channel-educacion #rc-site-name-texto {background:none;color:#A97EC9;padding:0.1em 0.2em 0 0.2em;display:inline;clear:none;}
+.rc-channel-motor #rc-site-name-texto-pre {background:none;padding:0.36em 0 0 0;}
+.rc-channel-motor #rc-site-name-texto{background:none;display:inline;float:none;clear:none}
+.rc-channel-viajes #rc-site-name-texto-pre {background:none;padding:0.36em 0 0 0;}
+.rc-channel-viajes #rc-site-name-texto{background:none;display:inline;float:none;clear:none}
+.rc-channel-vivienda #rc-site-name-texto-pre {background:none;padding:0.36em 0 0 0;}
+.rc-channel-vivienda #rc-site-name-texto{background:none;display:inline;float:none;clear:none}
+.rc-channel-mascotas #rc-site-name-texto-pre {background:none;color:#D5AA00;padding:0.5em 0 0 0;}
+.rc-channel-mascotas #rc-site-name-texto {background:none;color:#D5AA00;padding:0.1em 0.2em 0 0.2em;display:inline;clear:none;}
+.rc-channel-medio-ambiente #rc-site-name-texto-pre {background:url(/wp-content/uploads/static/www/imgs/bk.traslucido.png) 0 0 repeat}
+.rc-channel-medio-ambiente #rc-site-name-texto {background:url(/wp-content/uploads/static/www/imgs/bk.traslucido.png) 0 0 repeat}
+.rc-channel-solidaridad #rc-site-name-texto-pre {background:none;color:#BABA01;padding:0.5em 0 0 0;}
+.rc-channel-solidaridad #rc-site-name-texto {background:none;color:#BABA01;padding:0.1em 0.2em 0 0.2em;display:inline;clear:none;}
+.rc-channel-tecnologia #rc-site-name-texto-pre {background:url(/wp-content/uploads/static/www/imgs/bk.traslucido.png) 0 0 repeat}
+.rc-channel-tecnologia #rc-site-name-texto {background:url(/wp-content/uploads/static/www/imgs/bk.traslucido.png) 0 0 repeat}
+
+
+
+
+#rc-buscador {float:left;}
+#rc-q-container {background:#fff;}
+#rc-q {
+    font-size:1.5em;
+    font-weight:normal;
+    line-height:1.2em;
+    width:24.5em;
+    padding:0.4em 3em 0.4em 0.6em;
+    margin:0 0 0 2.5em;
+    background:url(/wp-content/uploads/static/common/imgs/ico.lupa3.png) right center no-repeat;
+    border-radius: 0.5em;-moz-border-radius: 0.5em;-webkit-border-radius: 0.5em;
+    border:0.1em solid #666;
+	color:#9b9b9b;}
+
+#rc-buscador-boton-lupa {display:none;}
+
+        
+        
+#rc-canal-secciones-destacadas {width:100%;clear:both;display:block;float:left;list-style:none;height:1.8em;margin:0;padding:1em 0 1em 0;background:url(/wp-content/uploads/static/common/imgs/estilo-eroski/ico.senal.png) 0 0 no-repeat;background-position:325px 0;padding-left:0}
+#rc-canal-secciones-destacadas li{display:inline;padding:0 0.3em;border-right:0.1em solid #fff}
+#rc-canal-secciones-destacadas li#rc-canal-secciones-destacadas-ultimo{border:none;padding-right:0}
+#rc-canal-secciones-destacadas li a{font-size:1.3em;line-height:1.4em;font-weight:bold;color:#999999;}
+#rc-canal-secciones-destacadas li a:hover{color:#cc0000;text-decoration:none}
+#rc-canal-secciones-destacadas li.rc-canal-secciones-on a{text-decoration:none;color:#cc0000;}
+
+#rc-canal-secciones-destacadas-pie{clear:both;display:block;float:left;list-style:none;height:1.8em;margin:0;padding:1em 0 1em 0;}
+#rc-canal-secciones-destacadas-pie li{display:inline;padding:0 0.3em;border-right:0.1em solid #fff}
+#rc-canal-secciones-destacadas-pie li#rc-canal-secciones-destacadas-pie-ultimo{border:none;padding-right:0}
+#rc-canal-secciones-destacadas-pie li a{font-size:1.6em;line-height:1.4em;font-weight:bold;color:#fff}
+
+#rc-canal-subcanales{clear:both;margin:0;padding:0;list-style:none;overflow:hidden;background:#33393C}
+#rc-canal-subcanales li{display:block;float:left;text-align:center;width:10em;padding:0;border-left:.1em solid #666;border-right:0.1em solid #000;}
+#rc-canal-subcanales li a {display:block;padding:.5em 0;color:#ccc;font-size:1.3em;line-height:1.2em;font-weight:bold}
+#rc-canal-subcanales li#rc-canal-subcanales-on,
+#rc-canal-subcanales li:hover {background-color:#fff;border-color:#fff;}
+#rc-canal-subcanales li#rc-canal-subcanales-on a,
+#rc-canal-subcanales li a:hover {color:#33393C;text-decoration:none;}
+
+/*para colocar la flecha*/
+#rc-canal-secciones{width:100%;clear:both;display:block;float:left;list-style:none;margin:0;padding:1em;background:url(/wp-content/uploads/static/common/imgs/estilo-eroski/ico.senal.png) 0 0 no-repeat;}
+/*
+#rc-canal-guias{width:100%;clear:both;display:block;float:left;list-style:none;margin:0;padding:1em;background:url(/wp-content/uploads/static/common/imgs/estilo-eroski/ico.senal.png) 0 0 no-repeat;}
+*/
+#rc-canal-guias{width:100%;clear:both;display:block;float:left;list-style:none;margin:0 0 0 -1em;padding-left:2.5em;padding-bottom:1em;}
+
+.rc-channel-alimentacion #rc-canal-secciones {background-position:32px 0;}
+.rc-channel-salud #rc-canal-secciones {background-position:118px 0;}
+.rc-channel-seguridad-alimentaria #rc-canal-secciones {background-position:210px 0;}
+.rc-channel-bebe #rc-canal-secciones {display:none;}
+.rc-channel-medio-ambiente #rc-canal-secciones {background-position:399px 0;}
+.rc-channel-mascotas #rc-canal-secciones {background-position:485px 0;}
+.rc-channel-solidaridad #rc-canal-secciones {background-position:565px 0;}
+.rc-channel-economia-domestica #rc-canal-subcanales,
+.rc-channel-motor #rc-canal-subcanales,
+.rc-channel-viajes #rc-canal-subcanales,
+.rc-channel-vivienda #rc-canal-subcanales {background:#33393C url(/wp-content/uploads/static/common/imgs/estilo-eroski/ico.senal.png) 648px 0 no-repeat;}
+.rc-channel-economia-domestica #rc-canal-secciones,
+.rc-channel-motor #rc-canal-secciones,
+.rc-channel-viajes #rc-canal-secciones,
+.rc-channel-vivienda #rc-canal-secciones {background:none;}
+.rc-channel-tecnologia #rc-canal-secciones {background-position:731px 0;}
+.rc-channel-bricolaje #rc-canal-secciones {background-position:801px 0;}
+.rc-channel-educacion #rc-canal-secciones {background-position:878px 0;}
+.rc-channel-viajes #rc-canal-secciones {}
+.rc-channel-vivienda #rc-canal-secciones {}
+
+#rc-canal-secciones li{display:inline;padding:0 0.2em;border-right:0.1em solid #999}
+#rc-canal-secciones li#rc-canal-secciones-ultimo{border:none;padding-right:0}
+#rc-canal-secciones li#rc-canal-secciones-primero{font-family:'fs_lolabold';font-size:20px;border:none;padding-left:0;padding-right:.2em;color:#e42415;text-decoration:none;}
+#rc-canal-secciones li a{font-size:1.3em;line-height:1.2em;font-weight:bold;color:#999;margin-left:-0.2em;}
+#rc-canal-secciones li a:hover{color:#cc0000;text-decoration:none;}
+
+#rc-canal-secciones li.rc-canal-secciones-on a{text-decoration:none;color:#e42415;}
+.rc-channel-medio-ambiente #rc-canal-secciones li.rc-canal-secciones-on a{text-decoration:none;color:#e42415}
+.rc-channel-tecnologia #rc-canal-secciones li.rc-canal-secciones-on a{text-decoration:none;color:#e42415}
+
+#rc-canal-guias li{display:inline;padding:0 0.2em;border-right:0.1em solid #999}
+#rc-canal-guias li#rc-canal-guias-ultimo{border:none;padding-right:0}
+#rc-canal-guias li#rc-canal-guias-primero{font-family:'fs_lolabold';border:none;padding-left:0;padding-right:.2em;color:#e42415;text-decoration:none;}
+#rc-canal-guias li a{font-size:1.3em;line-height:1.2em;font-weight:bold;color:#999;margin-left:-0.2em;}
+#rc-canal-guias li a:hover{color:#cc0000;text-decoration:none;}
+
+#rc-canal-guias li.rc-canal-secciones-on a{text-decoration:none;color:#e42415;}
+.rc-channel-medio-ambiente #rc-canal-guias li.rc-canal-secciones-on a{text-decoration:none;color:#e42415}
+.rc-channel-tecnologia #rc-canal-guias li.rc-canal-secciones-on a{text-decoration:none;color:#e42415}
+
+/*
+.rc-channel-alimentacion #rc-canal-formatos{background:transparent;padding-right:0}
+.rc-channel-bebe #rc-canal-formatos{background:transparent;margin-top:0.5em;}
+.rc-channel-bricolaje #rc-canal-formatos{background:transparent;padding-right:0}
+.rc-channel-economia-domestica #rc-canal-formatos{background:transparent;}
+.rc-channel-educacion #rc-canal-formatos{background:transparent;padding-right:0}
+.rc-channel-mascotas #rc-canal-formatos{background:transparent;margin-top:1.5em;}
+.rc-channel-solidaridad #rc-canal-formatos{background:transparent;}
+.rc-channel-motor #rc-canal-formatos{background:transparent;}
+.rc-channel-salud #rc-canal-formatos-container{overflow:hidden}
+.rc-channel-salud #rc-canal-formatos{background:transparent;text-align:right;width:98em;margin:0 auto;float:none}
+.rc-channel-seguridad-alimentaria #rc-canal-formatos{background:transparent;padding-right:0}
+.rc-channel-viajes #rc-canal-formatos{background:transparent;}
+.rc-channel-vivienda #rc-canal-formatos{background:transparent;}
+*/
+
+#rc-formatos-container {position:relative;float:right;margin:1.1em 0 0 2em;padding:0.1em 0.2em;font-size:1em;margin:0;padding:0 0.7em;font-weight:bold;}
+#rc-canal-formatos-titulo {font-size:1.3em;color:#666;font-weight:normal;padding-right:1em;background:url("/wp-content/uploads/static/common/imgs/estilo-eroski/ico.plegado.png") right center no-repeat;}
+
+#rc-canal-formatos {display:none;float:right;padding:1em 3.25em;font-weight:normal;list-style:none;margin:0;background:#F2F2F2;position:absolute;top:30px;left:0;z-index:5;}
+#rc-canal-formatos li{display:block;padding:0 0.3em;margin-bottom:.8em;}
+#rc-canal-formatos li#rc-canal-formatos-ultimo{border:none;padding-right:0}
+#rc-canal-formatos li a {font-size:1.2em;line-height:1.2em;color:#666}
+#rc-canal-formatos li a:hover {color:#292929}
+#rc-canal-formatos li.rc-canal-formatos-on a{text-decoration:underline}
+#rc-canal-formatos-ultimo {border:none;padding-right:0}
+
+.rc-channel-medio-ambiente #rc-canal-formatos li.rc-canal-formatos-on a{text-decoration:none;color:#58ab27}
+.rc-channel-tecnologia #rc-canal-formatos li.rc-canal-formatos-on a{text-decoration:none;color:#3DC2FF}
+#rc-canal-secciones-formatos-container-1{clear:both;overflow:hidden}
+#rc-canal-secciones-formatos-container-2{clear:both;overflow:hidden}
+.rc-channel-alimentacion #rc-canal-secciones-formatos-container-2{width:98em;margin:0 auto;overflow:hidden}
+.rc-channel-bricolaje #rc-canal-secciones-formatos-container-1{}
+.rc-channel-bricolaje #rc-canal-secciones-formatos-container-2{width:98em;height:3.5em;margin:0 auto;overflow:visible;position:relative;z-index:1}
+.rc-channel-educacion #rc-canal-secciones-formatos-container-1{}
+.rc-channel-educacion #rc-canal-secciones-formatos-container-2{width:98em;margin:0 auto;overflow:hidden}
+.rc-channel-seguridad-alimentaria #rc-canal-secciones-formatos-container-1{overflow:hidden}
+.rc-channel-seguridad-alimentaria #rc-canal-secciones-formatos-container-2{width:98em;margin:0 auto;overflow:hidden}
+.rc-channel-economia-domestica #rc-canal-secciones-formatos-container-1{background-color:#fff}
+
+
+
+
+/* RC-CAJA-PRINCIPAL */
+#rc-caja-principal{padding-bottom:7em;background:#f2f2f2;}
+/*.rc-channel-alimentacion #rc-caja-principal-container{background:#f7f7f7;}
+.rc-channel-bricolaje #rc-caja-principal-container{background:#ededed url(/wp-content/uploads/static/common/imgs/bk.centro-bricolaje.png) 0 0 repeat}
+.rc-channel-seguridad-alimentaria #rc-caja-principal-container{background:#efebe0;}
+.rc-channel-bebe #rc-caja-principal-container{background:#e8e8ea url(/wp-content/uploads/static/common/imgs/bk.centro-bebe.png) center 3em no-repeat;}
+.rc-channel-salud #rc-caja-principal-container{background:url(/wp-content/uploads/static/common/imgs/bk.centro-salud.jpg) center top no-repeat;}
+.rc-channel-economia-domestica #rc-caja-principal-container{background:#ededed;}
+.rc-channel-educacion #rc-caja-principal-container{background:#e8e8ea url(/wp-content/uploads/static/common/imgs/bk.educacion.jpg) center 3em repeat;}
+.rc-channel-medio-ambiente #rc-caja-principal-container{background:#e0e5d2 url(/wp-content/uploads/static/common/imgs/bk.centro-medio-ambiente.png) center -10em no-repeat;}
+.rc-channel-motor #rc-caja-principal-container{background:#ededed;}
+.rc-channel-tecnologia #rc-caja-principal-container{background:#DCDFE8 url(/wp-content/uploads/static/common/imgs/bk.centro-tecnologia.png) center top no-repeat;}
+.rc-channel-viajes #rc-caja-principal-container{background:#ededed;}
+.rc-channel-vivienda #rc-caja-principal-container{background:#ededed;}
+.rc-channel-mascotas #rc-caja-principal-container{background:#f8f3dc url(/wp-content/uploads/static/common/imgs/bk.mascotas.png) center 3em no-repeat;}
+.rc-channel-alimentacion #rc-caja-principal{padding-bottom:10em;background:#f7f7f7 url(/wp-content/uploads/static/common/imgs/bk.pie-alimentacion.png) center bottom no-repeat;}
+.rc-channel-bricolaje #rc-caja-principal{padding-bottom:0;background:transparent url(/wp-content/uploads/static/common/imgs/bk.centro-bricolaje2.png) center 10em no-repeat;}
+*/
+
+/*.rc-channel-seguridad-alimentaria #rc-caja-principal{padding-bottom:10em;background:#efebe0 url(/wp-content/uploads/static/common/imgs/bk.pie-seguridad-alimentaria.jpg) center bottom no-repeat;}
+.rc-channel-bebe #rc-caja-principal{padding-bottom:10em;background:transparent url(/wp-content/uploads/static/common/imgs/bk.pie-bebe.png) center bottom no-repeat;}
+.rc-channel-salud #rc-caja-principal{padding-bottom:10em;background:url(/wp-content/uploads/static/common/imgs/bk.pie-salud-1.png) center bottom no-repeat;}
+.rc-channel-economia-domestica #rc-caja-principal{padding-bottom:17em;background:transparent url(/wp-content/uploads/static/common/imgs/bk.pie-economia-domestica.png) center bottom repeat-x;}
+.rc-channel-medio-ambiente #rc-caja-principal{padding-bottom:10em;background:transparent url(/wp-content/uploads/static/common/imgs/bk.pie-medio-ambiente.png) center bottom repeat-x;}
+.rc-channel-motor #rc-caja-principal{padding-bottom:17em;background:transparent url(/wp-content/uploads/static/common/imgs/bk.pie-economia-domestica.png) center bottom repeat-x;}
+.rc-channel-tecnologia #rc-caja-principal{padding-bottom:10em;background:transparent url(/wp-content/uploads/static/common/imgs/bk.pie-tecnologia.png) center bottom no-repeat;}
+.rc-channel-viajes #rc-caja-principal{padding-bottom:17em;background:transparent url(/wp-content/uploads/static/common/imgs/bk.pie-economia-domestica.png) center bottom repeat-x;}
+.rc-channel-vivienda #rc-caja-principal{padding-bottom:17em;background:transparent url(/wp-content/uploads/static/common/imgs/bk.pie-economia-domestica.png) center bottom repeat-x;}
+.rc-channel-mascotas #rc-caja-principal{padding-bottom:10em;background:transparent url(/wp-content/uploads/static/common/imgs/bk.pie-mascotas.png) center bottom no-repeat;}
+*/
+.rc-caja-principal-parche-sombra{width:98em;height:1.5em;margin:-0.5em auto 0 auto;background-color:#fff;}
+ 
+/* RC-UTILIDADES */
+#rc-utilidades-container{overflow:visible;}
+.rc-channel-bricolaje #rc-utilidades-container{background-color:#fff}
+#rc-utilidades{width:98em;margin:0 auto;}
+
+/* MIGAS y LAST UPDATE */
+#rc-last-update{font-size:1.1em;line-height:1.2em;clear:both;float:left;margin:0.8em 0 0.9em 0;padding:0.1em 0.2em;}
+#rc-migas-container {clear:both;overflow:hidden;}
+#rc-migas {clear:both;float:left;font-size:1.2em;line-height:1.2em;margin:1.1em 0 1.3em 0;padding:0.1em 0.2em;font-weight:normal;color:#9a9a9a;}
+#rc-migas a {color:#9a9a9a;}
+#rc-migas a:last-child {color:#292929;}
+#rc-migas a:hover{color:#292929}
+#rc-migas a:last-child:hover{text-decoration:none;cursor:default;}
+
+/* HERRAMIENTAS SOCIALES */
+.addthis_toolbox{padding:0.8em 0 0 0;}
+.addthis_button_tweet iframe{margin-left:0.3em;}
+.addthis_button_facebook_like iframe{margin-bottom:0.3em;}
+.socialMedia{float:left;margin-bottom:1.5em;}
+
+/* IDIOMAS */
+#rc-cabecera .idiomas-mobile {display:none;}
+
+/*
+#rc-idiomas {float:right;margin:1.1em 0 0 2em;padding:0.1em 0.2em;list-style:none;background-color:#fff}
+#rc-idiomas li{font-size:1.1em;float:left;margin:0;padding:0 0.7em;color:#777;font-weight:bold;border-right:0.1em solid #777;}
+#rc-idiomas li#rc-idiomas-primero{padding-left:0}
+#rc-idiomas li#rc-idiomas-ultimo{border:0;padding-right:0}
+*/ 
+/* CONTENIDO */
+#rc-contenido{clear:both;width:98.2em;margin:0 auto;padding:2em 1em 1em 1em;overflow:hidden;background-color:#fff;}
+
+
+
+
+
+
+/* IMÁGENES */
+img.rc-imagen-border, div.rc-imagen-border{padding:1em}
+img.rc-imagen-border, div.rc-imagen-center{padding:0}
+img.rc-imagen-border{border:0.1em solid #ccc;padding:0.7em;}
+div.rc-imagen-border img{border:0.1em solid #ccc;padding:0.7em;}
+.rc-imagen-center{display:block;margin:1em auto}
+.rc-imagen-left{display:inline;float:left;margin:1em 1em 1em 0;}
+.rc-imagen-right{display:inline;float:right;margin:1em 0 1em 1em;}
+.rc-pie-de-foto-container{display:block;clear:both}
+.rc-pie-de-foto{display:block;text-align:right;color:#777;font-size:1.1em;line-height:1.1em;padding:0 0.4em;}
+.rc-imagen-left .rc-pie-de-foto{text-align:left}
+.rc-pie-de-foto a{text-decoration:underline}
+
+.rc-imagen-container{display:inline;float:left}
+
+
+/* PAGINACION */
+#rc-pagination{clear:both;text-align:right;margin:.5em 0;padding:.5em;overflow:hidden;border-top:0.1em dotted #000;}
+#rc-pagination p{display:none;}
+/*
+#rc-pagination ul{width:100%;list-style:none;overflow:hidden;padding:0.3em 0;background-color:#fff}
+#rc-pagination ul li{display:inline;margin-right:.1em;}
+#rc-pagination ul li a{font-size:1.2em;line-height:1em;color:#369;padding:.1em .3em;font-weight:bold;border:.1em solid #d6d6d6}
+*/
+
+/* estilos para el paginado */
+#rc-pagination ul{list-style:none;margin:2em 0 1.5em 0;padding:0;text-align:right;background-color:transparent}
+#rc-pagination ul li{font-size:1.2em;font-weight:bold;display:inline;margin-right:0.2em;}
+#rc-pagination ul li a{color:#666;text-shadow: #fff 0.1em 0.1em 0.1em;padding:0.4em 0.8em;border:0.1em solid #afafaf;border-radius: 0.3em;-moz-border-radius:0.3em;-webkit-border-radius:0.3em;background: #ececec; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ececec'); background: -o-linear-gradient(top, #ffffff, #ececec); background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ececec)); background: -moz-linear-gradient(top,  #ffffff,  #ececec);}
+#rc-pagination ul li a:hover,
+#rc-pagination ul li#rc-pagination-actual a{border:1px solid #afafaf;border-radius: 0.3em;-moz-border-radius:0.3em;-webkit-border-radius:0.3em;text-decoration:none;background: #666;color:#fff;text-shadow: #000 0.1em 0.1em 0.1em;}
+#rc-pagination ul li a:hover, #rc-pagination ul li#rc-pagination-actual a{background:#369;color:#fff;text-decoration:none;}
+#rc-pagination ul.rc-canal-alimentacion li a:hover, #rc-pagination ul.rc-canal-alimentacion li#rc-pagination-actual a{background:#e20a16;}
+#rc-pagination ul.rc-canal-bricolaje li a:hover, #rc-pagination ul.rc-canal-bricolaje li#rc-pagination-actual a{background:#9C6940;}
+#rc-pagination ul.rc-canal-economia-domestica li a:hover, #rc-pagination ul.rc-canal-economia-domestica li#rc-pagination-actual a{background:#579FAA;}
+#rc-pagination ul.rc-canal-educacion li a:hover, #rc-pagination ul.rc-canal-educacion li#rc-pagination-actual a{background:#A97EC9;}
+#rc-pagination ul.rc-canal-medio-ambiente li a:hover, #rc-pagination ul.rc-canal-medio-ambiente li#rc-pagination-actual a{background:#98B44F;}
+#rc-pagination ul.rc-canal-motor li a:hover, #rc-pagination ul.rc-canal-motor li#rc-pagination-actual a{background:#579FAA;}
+#rc-pagination ul.rc-canal-tecnologia li a:hover, #rc-pagination ul.rc-canal-tecnologia li#rc-pagination-actual a{background:#7D8FBA;}
+#rc-pagination ul.rc-canal-salud li a:hover, #rc-pagination ul.rc-canal-salud li#rc-pagination-actual a{background:#0082bd;}
+#rc-pagination ul.rc-canal-seguridad-alimentaria li a:hover, #rc-pagination ul.rc-canal-seguridad-alimentaria li#rc-pagination-actual a{background:#e89c2d;}
+#rc-pagination ul.rc-canal-solidaridad li a:hover, #rc-pagination ul.rc-canal-solidaridad li#rc-pagination-actual a{background:#BABA01;}
+#rc-pagination ul.rc-canal-viajes li a:hover, #rc-pagination ul.rc-canal-viajes li#rc-pagination-actual a{background:#579FAA;}
+#rc-pagination ul.rc-canal-vivienda li a:hover, #rc-pagination ul.rc-canal-vivienda li#rc-pagination-actual a{background:#579FAA;}
+#rc-pagination ul.rc-canal-eroski li a:hover, #rc-pagination ul.rc-canal-eroski li#rc-pagination-actual a{background:#E2001A;}
+
+
+
+
+
+
+
+/* CAJA PRINCIPAL PIE */
+#rc-caja-principal-pie{width:94em;margin:3em auto 0 auto;padding:2em 2em 1em 2em;overflow:hidden;background-color:#fff;box-shadow: 0 0.5em 0.5em 0.1em #666;}
+#rc-caja-principal-pie-en-otros-canales{width:70em;overflow:hidden;float:left}
+#rc-caja-principal-pie-en-otros-canales h3{font-size:1.6em;margin:0.3em 0 1em 0;font-family:times,serif}
+#rc-caja-principal-pie-en-otros-canales-links{float:left;list-style:none;margin:0;padding:0.1em;border:0.1em solid #ccc;}
+#rc-caja-principal-pie-en-otros-canales-links li{clear:both;float:left;padding:1em;background-color:#eee}
+#rc-caja-principal-pie-en-otros-canales-links a{display:block;width:11em;height:7.2em;border-width:1em;border-style:solid;border-color:#fff;}
+#rc-caja-principal-pie-en-otros-canales-links img{display:block;width:11em;height:7.2em;}
+#rc-caja-principal-pie-en-otros-canales-contenidos{position:relative;float:left;overflow:hidden;width:54.3em;height:33.6em;list-style:none;margin:0;padding:0.1em;border:0.1em solid #ccc;border-left:none}
+#rc-caja-principal-pie-en-otros-canales-contenidos li{position:absolute;top:0.1em;left:0.1em;background-color:#fff}
+#rc-caja-principal-pie-en-otros-canales-contenidos a{display:block;width:54.3em;height:33.6em;overflow:hidden;color:#fff;text-decoration:none;font-weight:bold}
+#rc-caja-principal-pie-en-otros-canales-contenidos img{display:block;width:54.6em;height:36em;position:relative;z-index:1;margin-top:-1.7em;}
+.rc-caja-principal-pie-en-otros-canales-contenido-titulo{display:block;float:right;width:47em;position:absolute;z-index:2;right:0;bottom:2em;padding:2em;background:url(/wp-content/uploads/static/www/imgs/bk.traslucido.png) 0 0 repeat}
+.rc-caja-principal-pie-en-otros-canales-contenido-titulo1{font-size:1.7em;line-height:1.3em;background-color:transparent}
+.rc-caja-principal-pie-en-otros-canales-contenido-titulo1.rc-canal-economia-domestica{color:#999}
+.rc-caja-principal-pie-en-otros-canales-contenido-titulo2{font-size:2em;line-height:1.3em}
+#rc-caja-principal-pie-ranking-ideas{width:22em;float:right;overflow:hidden}
+
+/* PIE */
+
+#rc-caja-principal-pie-encuesta{width:22em;padding-top:1em;float:right}
+
+/*#rc-pie-canal-tv{float:right;margin:0;padding:1em 6em 0.5em 0;width:20em;float:right;text-align:right;background:url(/wp-content/uploads/static/common/imgs/ico.tv.png) right 0.5em no-repeat;}
+#rc-pie-canal-tv a{font-size:1.6em;line-height:1em;font-weight:bold;color:#eee;}*/
+
+.rc-channel-mascotas #rc-pie-canal-tv {margin:-3em 0 0 0}
+.rc-channel-mascotas #rc-pie-canal-tv a {color:#fff}
+
+/* PIE BUSCADOR */
+#rc-pie-container #rc-pie-buscador { width: 94em;padding:2.2em 3em;margin:0 auto;background:#4f4f4f;overflow:hidden;}
+#rc-pie-container #rc-pie-buscador .bloque-donde-buscar {float:left;margin-left:16%;}
+#rc-pie-container #rc-pie-buscador form .bloque-donde-buscar span.label{ margin-right: .5em;font-family: 'fs_lolabold';font-weight: normal;font-size: 2em; color:#fff;}
+#rc-pie-container #rc-pie-buscador form .bloque-donde-buscar label{margin:0 .5em 0 .3em;font-size: 1.4em;font-family:Arial, Helvetica, sans-serif; color:#b6b6b6; position: relative; top: -.2em;}
+#rc-pie-container #rc-pie-buscador form .bloque-donde-buscar label span{text-transform: uppercase;}
+#rc-pie-container #rc-pie-buscador form .bloque-donde-buscar input { margin: 0; border:none; width: 2em; height: 2em;}
+
+#rc-pie-container #rc-pie-buscador form .bloque-buscar {width:40%;float:right;text-align:right;}
+#rc-pie-container #rc-pie-buscador form .bloque-buscar input {height:35px;padding:0 .5em;font-size:1.5em; background:#ee291e;color:#fff; border:none;border-radius:0 .5em .5em 0; }
+#rc-pie-container #rc-pie-buscador form .bloque-buscar input.campo-buscar {width:72%;background: #fff;font-size:1.5em; font-family:Arial, Helvetica, sans-serif ; color:#9b9b9b;border-radius:.5em 0 0 .5em; }
+#rc-pie-container #rc-pie-buscador form .bloque-buscar input#buscadorPortadaBuscar {padding:0 1em;position:relative;left:-3px;top:1px;color:#090909;background:#090909 url("/wp-content/uploads/static/common/imgs/ico.lupa3.png") center center no-repeat ;}
+#rc-pie-container #rc-pie-buscador form .bloque-buscar input#buscadorPortadaBuscar:hover {background:#9F0E03;cursor:pointer;}
+
+
+
+
+/* PIE RED CONSUMER */
+#rc-pie{width:98em;margin:0 auto;padding:1em 0 3em 0;overflow:hidden}
+
+/* PIE-SERVICIOS */
+#rc-pie-servicios-logo-fe{float:left;margin:0;padding:0}
+#rc-pie-servicios-logo-fe img{display:block;width:19em;height:5.4em;border:0;}
+
+#rc-pie-servicios{width:75em;float:right;text-align:right;margin:0;padding:0;list-style:none}
+#rc-pie-servicios li{display:inline;padding:0 0.3em;border-right:0.1em solid #e20916}
+#rc-pie-servicios li#rc-pie-servicios-ultimo{border:none;padding-right:0}
+#rc-pie-servicios li a{font-size:1.3em;line-height:1.2em;font-weight:bold;color:#e20916}
+
+
+/* SERVICIOS SECUNDARIOS */
+#rc-otros-servicios-secundarios{float:right;margin:0;padding:0.5em 0;list-style:none;}
+#rc-otros-servicios-secundarios li{float:left;padding:0 0.5em;border-left:0.1em solid #e20916}
+#rc-otros-servicios-secundarios li#rc-otros-servicios-secundarios-primero{border:none}
+#rc-otros-servicios-secundarios a{font-size:1.1em;color:#e20916;text-decoration:underline}
+
+/* PIE-LEGAL */
+#rc-pie-legal{float:right;color:#777;margin:2em 0 0 0}
+#rc-pie-legal p{margin:0;padding:0;font-size:1.2em;line-height:normal}
+#rc-pie-legal a{color:#666;text-decoration:underline}
+
+/* PIE-VALIDACIONES */
+#rc-validaciones{float:right;width:8em;margin-top:1em}
+#rc-validaciones ul{list-style:none;margin:0;padding:0}
+#rc-validaciones ul li{display:block;float:right;border:none;margin-left:0.2em;padding-bottom:0.6em}
+/*#rc-validaciones ul li img{display:block;height:1.3em;}*/
+
+
+
+/* VOTES */
+.rc-votes{font-size:0.9em !important;padding:0.1em 0 0.1em 1.6em;background:url(/wp-content/uploads/static/common/imgs/ico.votes.png) left 0.2em no-repeat;color:#999;margin:0;}
+.rc-votes a{font-weight:bold;text-decoration:none;}
+.rc-votes a:hover{color:#fff;background-color:#369;text-decoration:none}
+.rc-votes.rc-canal-alimentacion a{color:#e20a16}
+.rc-votes.rc-canal-alimentacion a:hover{color:#fff;background-color:#e20a16}
+.rc-votes.rc-canal-bricolaje a{color:#9C6940}
+.rc-votes.rc-canal-bricolaje a:hover{color:#fff;background-color:#9C6940}
+.rc-votes.rc-canal-economia-domestica a{color:#579FAA}
+.rc-votes.rc-canal-economia-domestica a:hover{color:#fff;background-color:#579FAA}
+.rc-votes.rc-canal-educacion a{color:#A97EC9}
+.rc-votes.rc-canal-educacion a:hover{color:#fff;background-color:#A97EC9}
+.rc-votes.rc-canal-medio-ambiente a{color:#98B44F}
+.rc-votes.rc-canal-medio-ambiente a:hover{color:#fff;background-color:#98B44F}
+.rc-votes.rc-canal-motor a{color:#579FAA}
+.rc-votes.rc-canal-motor a:hover{color:#fff;background-color:#579FAA}
+.rc-votes.rc-canal-tecnologia a{color:#7D8FBA}
+.rc-votes.rc-canal-tecnologia a:hover{color:#fff;background-color:#7D8FBA}
+.rc-votes.rc-canal-salud a{color:#0079a8}
+.rc-votes.rc-canal-salud a:hover{color:#fff;background-color:#0079a8}
+.rc-votes.rc-canal-seguridad-alimentaria a{color:#e89c2d}
+.rc-votes.rc-canal-seguridad-alimentaria a:hover{color:#fff;background-color:#EF6A11}
+.rc-votes.rc-canal-solidaridad a{color:#BABA01}
+.rc-votes.rc-canal-solidaridad a:hover{color:#fff;background-color:#BABA01}
+.rc-votes.rc-canal-viajes a{color:#579FAA}
+.rc-votes.rc-canal-viajes a:hover{color:#fff;background-color:#579FAA}
+.rc-votes.rc-canal-vivienda a{color:#579FAA}
+.rc-votes.rc-canal-vivienda a:hover{color:#fff;background-color:#579FAA}
+.rc-votes.rc-canal-eroski a{color:#E2001A}
+.rc-votes.rc-canal-eroski a:hover{color:#fff;background-color:#E2001A}
+
+/* NUEVA CABECERA COMÚN "ESTILO EROSKI" */
+/* Generated by Font Squirrel (http://www.fontsquirrel.com) on November 19, 2012 */
+/*
+@font-face {
+    font-family: 'fs_lolabold';
+    src: url('/common/fonts/fs_lola-bold-webfont.eot');
+    src: url('/common/fonts/fs_lola-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/common/fonts/fs_lola-bold-webfont.woff') format('woff'),
+         url('/common/fonts/fs_lola-bold-webfont.ttf') format('truetype'),
+         url('/common/fonts/fs_lola-bold-webfont.svg#fs_lolaregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'fs_lolaregular';
+    src: url('/common/fonts/fs_lola-regular-webfont.eot');
+    src: url('/common/fonts/fs_lola-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/common/fonts/fs_lola-regular-webfont.woff') format('woff'),
+         url('/common/fonts/fs_lola-regular-webfont.ttf') format('truetype'),
+         url('/common/fonts/fs_lola-regular-webfont.svg#fs_lolaregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+*/
+/*cabecera*/
+#rc-cabecera {padding-top:1.5em;background:#fff}
+#rc-cabecera #rc-cabecera-enlaces-directos {width:100%;overflow: hidden;list-style:none; margin:0; padding:0;clear:both;}
+#rc-cabecera #rc-cabecera-enlaces-directos li{width:auto; padding: 0 1.5em;float:right; background: url(/wp-content/uploads/static/common/imgs/estilo-eroski/bk.enlaces.png) right center no-repeat;}
+#rc-cabecera #rc-cabecera-enlaces-directos li a {color:#666;font-size: 1.4em; font-family:Arial,helvetica,sans-serif; text-decoration: none;}
+#rc-cabecera #rc-cabecera-enlaces-directos li a:hover {color:#C00;}
+#rc-cabecera #rc-cabecera-enlaces-directos li.boletines #rc-cabecera-enlaces-directos-titulo-boletines {display:block;padding:.5em 0 1em 2em;background: url(/wp-content/uploads/static/common/imgs/estilo-eroski/ico.boletines.png) left 0.2em no-repeat;}
+#rc-cabecera #rc-cabecera-enlaces-directos li.boletines #rc-cabecera-enlaces-directos-titulo-boletines span {padding-right:1em;background: url(/wp-content/uploads/static/common/imgs/estilo-eroski/ico.plegado.png) right center no-repeat;}
+#rc-cabecera #rc-cabecera-enlaces-directos li.portadas #rc-cabecera-enlaces-directos-titulo-portadas {display:block;padding:.5em 0 1em 2em;background: url(/wp-content/uploads/static/common/imgs/estilo-eroski/ico.portadas.png) left 0.2em no-repeat;}
+#rc-cabecera #rc-cabecera-enlaces-directos li.idiomas #rc-cabecera-enlaces-directos-titulo-idiomas {display:block;padding:.5em 0 1em 0;}
+#rc-cabecera #rc-cabecera-enlaces-directos li.idiomas #rc-cabecera-enlaces-directos-titulo-idiomas span {padding-right:1em;background: url(/wp-content/uploads/static/common/imgs/estilo-eroski/ico.plegado.png) right center no-repeat;}
+
+
+#rc-cabecera #rc-cabecera-enlaces-directos li.social {background: none;}
+#rc-cabecera #rc-cabecera-enlaces-directos li.social a{float:left;}
+#rc-cabecera #rc-cabecera-enlaces-directos li.social span{display: none;}
+
+#rc-cabecera #rc-cabecera-logos {float:left;margin: 6px 0 0;}
+#rc-cabecera #rc-cabecera-logos-buscador {width:98em; padding:0 0 .5em 0; overflow: hidden;}
+#rc-cabecera #rc-cabecera-logos-buscador h1 {width: auto; float: left; margin:6px 0 0;}
+#rc-cabecera #rc-cabecera-logos-buscador #rc-logo-fundacion {width: auto; float: right;}
+
+#rc-cabecera #rc-cabecera-enlaces-directos {overflow:visible;}
+#rc-cabecera #rc-cabecera-enlaces-directos li {position:relative;}
+
+#rc-cabecera #rc-cabecera-enlaces-directos-idiomas {display:none;position:absolute;top:2em;left:-1px;list-style:none; padding:1.5em 2.2em 1.5em;border:0.1em solid #ddd;border-top:none;background-color:#fff;z-index:1}
+#rc-cabecera #rc-cabecera-enlaces-directos-idiomas li{display:block;float:none;clear:both;background:none;padding:0.5em 0}
+#rc-cabecera #rc-cabecera-enlaces-directos-idiomas li a {font-size:1.3em;}
+
+
+#rc-cabecera #rc-cabecera-enlaces-directos-boletines {display:none;position:absolute;top:2.5em;left: -22em;list-style:none; padding:1em;border:0.1em solid #ccc;border-top:none;background-color:#fff;z-index:1;}
+#rc-cabecera #rc-cabecera-enlaces-directos-boletines li{display:block;float:none;clear:both;background:none;}
+#rc-cabecera #rc-cabecera-enlaces-directos-boletines li a {font-size:1.1em;}
+#rc-cabecera #rc-cabecera-enlaces-directos-boletines li span {background:none;border:none;}
+#rc-cabecera #rc-cabecera-enlaces-directos-boletines #email {margin-bottom:.3em;font-size: 1.6em;padding: 0.2em 0.5em;width: 94%;}
+#rc-cabecera #rc-cabecera-enlaces-directos-boletines #rc-boletin-alta {font-weight:bold;color:#C00;}
+#rc-cabecera #rc-cabecera-enlaces-directos-boletines #rc-boletin-mas-opciones {float:right;}
+
+#rc-cabecera #rc-cabecera-enlaces-directos-portadas {display:none;position:absolute;top:2.5em;left:0;list-style:none; padding:1em;border:0.1em solid #ccc;background-color:#fff;z-index:1}
+#rc-cabecera #rc-cabecera-enlaces-directos-portadas li{ display:block;float:none;clear:both;background:none;}
+#rc-cabecera #rc-cabecera-enlaces-directos-portadas li a span {background:none;border:none;}
+
+/*menu*/
+#rc-cabecera #rc-cabecera-barra {width:100%;overflow: hidden;list-style:none; margin:0; padding: 2px 0 0 0; background:#eb271c url(/wp-content/uploads/static/common/imgs/estilo-eroski/bk.menu.jpg) left top repeat-x; }
+#rc-cabecera #rc-cabecera-barra li { width: auto; float: left; padding: 0;border-right:1px solid #c32014;border-left:1px solid #f14438;}
+#rc-cabecera #rc-cabecera-barra li a{width: auto;padding:0.7em .45em .7em .5em; display: block;color:#fff; text-decoration: none;font-family: 'fs_lolabold';font-weight: normal;font-size: 1.4em;text-shadow:1px 1px #333; }
+#rc-cabecera #rc-cabecera-barra li a:hover, #rc-cabecera #rc-cabecera-barra li.rc-temas-on {background: url(/wp-content/uploads/static/common/imgs/estilo-eroski/bk.menu-hover.jpg) left top repeat-x; }
+#rc-cabecera #rc-cabecera-barra li.ultimo{border-right:none;}
+#rc-cabecera #rc-cabecera-barra li.primero{ width: auto; float: left; padding: 0;border-left:none;}
+
+.sticky #rc-cabecera-barra {position:fixed;top:0;z-index:999;}
+
+#rc-cabecera #rc-cabecera-barra #flechita {position:absolute;margin-top:33px;height:7px;background:url("/wp-content/uploads/static/common/imgs/estilo-eroski/ico.senal.png") center center no-repeat;border:none;}
+
+/* volver arriba */
+.volver-arriba {width:28px;height:30px;position:fixed;z-index:5;bottom:0;right:10px;font-size:18px;text-align:center;color:#fff;text-decoration:none;background:#D92320;box-shadow:0 0 3px #666;line-height:1.3em;}
+.volver-arriba:hover {background:#9A1A12;color:#fff;text-decoration:none;}
+.volver-arriba.hidden {display:none;}
+
+/* rc-contenidos-destacados-container */
+#rc-contenidos-destacados-container {width:28em;float:right;border-left: 0.1em solid #d0d0d0;padding-left:1em}
+
+
+/* FIN DE NUEVA CABECERA COMÚN "ESTILO EROSKI" */
+
+/* NUEVO CIERRE COMÚN "ESTILO EROSKI" */
+/*footer*/
+#rc-pie-container{background:#e9e9e9;clear:both;font-weight:normal}
+#rc-pie-container #rc-pie {width:94em;padding: 3em;background:#000 url(/wp-content/uploads/static/common/imgs/estilo-eroski/bk.footer.png) left top repeat-x;}
+#rc-pie-container #rc-pie-enlaces-site{width:100%;overflow: hidden;}
+#rc-pie-container #rc-pie-enlaces-site div {float: left;}
+#rc-pie-container #rc-pie-enlaces-site div.eroski{width:37%;}
+#rc-pie-container #rc-pie-enlaces-site div.eroski li {width: 38%; margin-right: 4em; float: left; border-right:1px dotted #fff;}
+#rc-pie-container #rc-pie-enlaces-site div.eroski li:nth-child(even)  {border-right:none; margin: 0;}
+
+#rc-pie-container #rc-pie-enlaces-site div li {padding-bottom:1em}
+
+#rc-pie-container #rc-pie-enlaces-site div.interes {width:45%;}
+#rc-pie-container #rc-pie-enlaces-site div.interes li {width: 40%; margin-right: 4em; float: left; border-right:1px dotted #fff;}
+
+#rc-pie-container #rc-pie-enlaces-site div h3{margin:0 0 26px;font-family: 'fs_lolabold';font-weight: normal;font-size: 1.8em;color:#fff;}
+#rc-pie-container #rc-pie-enlaces-site div ul{list-style: none; margin: 0; padding: 0;}
+#rc-pie-container #rc-pie-enlaces-site div li a{color:#fff; text-decoration: none; font-size: 13px;}
+#rc-pie-container #rc-pie-enlaces-site div li a:hover{text-decoration:underline;}
+
+#rc-pie-container #rc-pie-canal-tv {float:right;margin:1em 0 2em;}
+
+#rc-pie-container #rc-pie .claim { margin: 2em 0;float:left;font-size: 13px;color:#fff; font-style: italic; }
+#rc-pie-container #rc-pie .claim a {color:#fff}
+
+/*bloque del pie pie*/
+#rc-pie-container #rc-pie-logos {width:94em;overflow: hidden;padding: 3em 0;background:#000; border-top: 1px solid #292929; margin: 0 auto;}
+#rc-pie-container #rc-pie-logos #rc-pie-logos-enlaces-pie {float: right; list-style: none; padding: 0; margin: 0;}
+#rc-pie-container #rc-pie-logos #rc-pie-logos-enlaces-pie li{ display: inline; }
+#rc-pie-container #rc-pie-logos #rc-pie-logos-enlaces-pie li a{padding:0 .5em;color:#bcbcbc; text-decoration: none; font-size: 11px; font-style: italic; position: relative; top: -1em;border-left: 1px solid #d5d5d5;}
+#rc-pie-container #rc-pie-logos #rc-pie-logos-enlaces-pie li span{display: none;}
+#rc-pie-container #rc-pie-logos #rc-pie-logos-enlaces-pie li.primero a{border-left: none;}
+#rc-pie-container #rc-pie-logos #rc-pie-logos-enlaces-pie li.social a{top: 0;border-left: none;}
+
+#rc-pie-logos-validacion {width: 70%; overflow: hidden; float: left;}
+#rc-pie-logos-validacion .enlace-fundacion {float: left; margin-right: 1em;}
+#rc-pie-logo-cooperativas {float: left; margin-right: 1em;}
+#rc-pie-logos-validacion #rc-validaciones { float: left;margin:0}
+#rc-pie-logos-validacion #rc-validaciones ul{list-style: none; padding: 0; margin: 0;}
+
+
+
+
+/* Diálogo de aceptación de Cookies */
+#rc-ley-cookies-dialogo {width:100%;padding:13px 0;position:fixed;bottom:0;left:0;background:#333;z-index:1;display:none;}
+#rc-ley-cookies-dialogo p {width:80%;margin:0 auto;color:#fff;font-size:13px;line-height:1.3em;}
+#rc-ley-cookies-dialogo p a {color:#fff;text-decoration:underline;}
+#cookies {width:75%;margin-left:3%;}
+
+
+
+
+
+/* BLOQUE DEL BUSCADOR EN EL PIE */
+#rc-pie-container #buscador{width:100em;font-size: 1em;margin:0 auto; padding-bottom:2em;background:#000;overflow:hidden;}
+#rc-pie-container #buscador form {width: 94em; padding:2em;}
+#rc-pie-container #buscador form .bloque-donde-buscar {margin-top:0.8em;width: 42em;float: right;}
+#rc-pie-container #buscador form .bloque-donde-buscar span.label{ margin-right: .5em;font-family: 'fs_lolabold';font-weight: normal;font-size: 2em; color:#fff;vertical-align:top;}
+#rc-pie-container #buscador form .bloque-donde-buscar label{margin:0 .5em 0 .3em;font-size: 1.4em;font-family:Arial, Helvetica, sans-serif; color:#b6b6b6; position: relative; top: -.2em;}
+#rc-pie-container #buscador form .bloque-donde-buscar label span{text-transform: uppercase;}
+#rc-pie-container #buscador form .bloque-donde-buscar input { margin: 0; border:none; width: 2em; height: 2em;font-size:1em;background:none;}
+#rc-pie-container #buscador form .bloque-buscar {width: 35em;float: right;}
+#rc-pie-container #buscador form .bloque-buscar input {padding:0 .5em; height:34px;font-size:1.4em; background:#ee291e;color:#fff; border:none;border-radius: .5em; }
+#rc-pie-container #buscador form .bloque-buscar input.campo-buscar {width: 70%;background: #fff;font-family:Arial, Helvetica, sans-serif ; color:#9b9b9b; }
+#rc-pie-container #buscador form .bloque-buscar input#buscadorPortadaBuscar:hover {background:#9F0E03;cursor:pointer;}
+
+/* FIN DE NUEVO CIERRE COMÚN "ESTILO EROSKI" */
+
+
+/* Ajustes para las interiores para que se vean bien los bloquecitos */
+#infografias-slide-container {background:#fff;}
+div.NUS-LIVE-container #bloque-banners,
+#menu-derecha-noticias {background:#fff;border:1px solid #D6D6D6;}
+
+div.NUS-LIVE-container #bloque-1 {margin-bottom:1.1em}
+
+
+/* BOTON DE VER MAS SOBRE */
+#boton-ver-mas-sobre {text-align:center;float:right;}
+#boton-ver-mas-sobre a {background:#E20A16;color:#fff !important;display:inline-block;font-size: 1.1em;padding: 0.8em 1.2em;text-align:center;text-decoration:none !important;text-transform:uppercase;}
+#boton-ver-mas-sobre a:hover {color:#fff !important;background:#f00;}
+
+/* Y ADEMAS */
+#y-ademas {margin:20px 0;padding:13px 0 15px;overflow:hidden;border-top:1px solid #626262;border-bottom:1px solid #626262;}
+#y-ademas h3 {margin-top:2px;font:normal 24px/22px 'fs_lolabold';display:inline-block;}
+#y-ademas ul {margin:20px 0 0;padding:0;list-style:none;clear:both;}
+#y-ademas ul li {width:23.4%;margin:0 2% 0 0;padding:0;float:left;line-height:1em;}
+#y-ademas ul li:last-child {margin-right:0;}
+#y-ademas ul li .foto-ademas {width:100%;height:95px;margin-bottom:5px;overflow:hidden;display:block;line-height:0;border:1px solid #bfbfbf;}
+#y-ademas ul li img {width:100%;min-height:120px;}
+#y-ademas ul li a {font:bold 12px/1em Arial;text-decoration:none;}
+
+
+/* MENU IZQUIERDA - ENTREVISTAS */
+#menu-izquierda #entrevista #portada-entrevista-subtitulo {font-size:13px;line-height: 1.2em;}
+#menu-izquierda #entrevista h2 {font-size:1.4em;}
+#menu-izquierda #entrevista .rc-canal-mascotas {background:none;border:0;}
+#menu-izquierda #entrevista .portada-entrevista-mas {font-size:11px;}
+
+/*Articulos por autor*/
+
+.container-listado-autor {
+    width: 725px;
+}
+@media (max-width: 1000px) {
+    .container-listado-autor {
+    width: 100%;
+    }
+}
+#rc-contenido .container-listado-autor h1 {
+    font: 3.6em/1.1em "fs_lolabold";
+    margin-bottom: 0.5em;
+}
+.container-listado-autor .articulo-autor {
+    margin-bottom: 15px;
+}
+.container-listado-autor .articulo-autor .texto-articulo {
+    display: inline-block;
+    padding-left: 20px;
+    width: calc(100% - 223px);
+    vertical-align: top;
+}
+.container-listado-autor .articulo-autor img {
+    min-width: 182px;
+    height: auto;
+    }
+@media (max-width: 620px) {
+    .container-listado-autor .articulo-autor img {
+    width: 100%;
+    }
+    .container-listado-autor .articulo-autor .texto-articulo {
+    padding-left: 0;
+    width: 100%;
+    }
+}
+#rc-contenido .container-listado-autor .articulo-autor .texto-articulo a,
+#rc-contenido .container-listado-autor .articulo-autor .texto-articulo span {
+    color: #4F4F4F;
+}
+#rc-contenido .container-listado-autor .articulo-autor .texto-articulo span {
+    display: inline-block;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+#rc-contenido .container-listado-autor .articulo-autor .texto-articulo h2 {
+    font-family: "fs_lolabold";
+    font-size: 2.5em;
+    font-weight: normal;
+    margin-bottom: 0.25em;
+    line-height: 1em;
+}
+@media (max-width: 780px) {
+    #rc-contenido .container-listado-autor h1 {
+    font-size: 2.6em;
+    line-height: 1em;
+    margin-bottom: 0.3em;
+    margin-top: 0.2em;
+    }
+    #rc-contenido .container-listado-autor .articulo-autor .texto-articulo h2 {
+    font-size: 2em;
+    line-height: 1.2em;
+    }
+}
+.container-listado-autor .articulo-autor .texto-articulo p {
+    color: #4f4f4f;
+    font-size: 1.3em;
+    line-height: 1.3em;
+    margin: 0 0 0.5em;
+}
+#rc-contenido .container-listado-autor #rc-pagination {
+    text-align: center;
+}
+#rc-contenido .container-listado-autor #rc-pagination li#rc-pagination-actual a{
+    background: none repeat scroll 0 0 #f3f3f3;
+    color: #aaaab1;
+    text-shadow: none;
+}

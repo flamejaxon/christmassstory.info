@@ -1,0 +1,29 @@
+/*
+ Theme Name:   consumer
+ Theme URI:    
+ Description:  Consumer Base
+ Author:       OpenSistemas
+ Author URI:   
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Text Domain:  consumer
+*/
+
+
+#rc-contenido {
+    width: 980px;
+}
+
+@media (max-width: 769px){
+    #rc-contenido{width: 100% !important;}
+}
+
+/**{
+    box-sizing: border-box;
+}*/
+
+header .entry-title{
+    z-index: 0;
+}
+

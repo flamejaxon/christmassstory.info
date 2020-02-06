@@ -1,0 +1,175 @@
+/*====================================================================*/
+/*=========================ES TU SANIDAD==============================*/
+/*====================================================================*/
+#bloque-articulos-estusanidad{
+	border: 3px solid #DDD;
+	padding: 10px 0px;
+	margin: 20px auto;
+	clear: both;
+	display: inline-block;
+}
+#bloque-articulos-estusanidad,
+#bloque-articulos-estusanidad *{
+	box-sizing: border-box;
+}
+#bloque-articulos-estusanidad ul{
+	margin: auto;
+	padding: 0px;
+	list-style: none;
+	text-align: center;
+}
+#bloque-articulos-estusanidad ul li{
+	display: inline-block;
+	width: 19%;
+	overflow: hidden;
+	vertical-align: top;
+	padding: 0px 10px 0px 0px;
+}
+#bloque-articulos-estusanidad ul li a{
+	color: #666;
+}
+#bloque-articulos-estusanidad ul li a img{
+	width: 100%;
+	height: auto;
+	padding: 2px;
+	background-color: #FFF;
+	border: 1px solid #AAA;
+}
+#bloque-articulos-estusanidad ul li a h3{
+	font-size: 1.5em;
+	margin: 5px auto;
+	padding: 0px;
+	text-align: left;
+}
+#bloque-articulos-estusanidad ul li a p{}
+#bloque-articulos-estusanidad ul li span{
+	color: #AAA;
+}
+#bloque-articulos-estusanidad ul li#logo-estusanidad{
+	position: relative;
+	top: -25px;
+	padding: 0px;
+}
+#bloque-articulos-estusanidad ul li#logo-estusanidad img,
+#bloque-articulos-estusanidad ul li#logo-estusanidadresp img{
+	border: none;
+	padding: 0px;
+}
+#bloque-articulos-estusanidad ul li#logo-estusanidadresp{
+	display: none;
+}
+/*RESPONSIVE*/
+@media (max-width: 768px){
+	#bloque-articulos-estusanidad ul li{
+		display: block;
+		width: 100%;
+		padding: 5px 25px;
+	}
+	#bloque-articulos-estusanidad ul li a img{
+		width: 100%;
+		height: auto;
+		padding: 10px;
+	}
+	#bloque-articulos-estusanidad ul li a h3{
+		font-size: 2em;
+		padding: 15px;
+	}
+	#bloque-articulos-estusanidad ul li#logo-estusanidad{display: none;}
+	#bloque-articulos-estusanidad ul li#logo-estusanidadresp{
+		display: block;
+		margin-bottom: 20px;
+	}
+	#bloque-articulos-estusanidad ul li#logo-estusanidadresp h2{
+		color: #AAA;
+		margin-bottom: 20px;
+	}
+	#bloque-articulos-estusanidad ul li#logo-estusanidadresp img{}
+}
+
+/*====================================================================*/
+/*=========================HELP MY CASH===============================*/
+/*====================================================================*/
+#bloque-articulos-helpmycash,
+#bloque-articulos-helpmycash *{
+	box-sizing: border-box;
+}
+#bloque-articulos-helpmycash{
+	border: 3px solid #DDD;
+	padding: 10px 0px;
+	margin: 20px auto;
+	clear: both;
+	display: inline-block;
+}
+#bloque-articulos-helpmycash ul{
+	margin: auto;
+	padding: 0px;
+	list-style: none;
+	text-align: center;
+}
+#bloque-articulos-helpmycash ul li{
+	display: inline-block;
+	width: 19%;
+	overflow: hidden;
+	vertical-align: top;
+	padding: 0px 10px 0px 0px;
+}
+#bloque-articulos-helpmycash ul li a{
+	color: #666;
+}
+#bloque-articulos-helpmycash ul li a img{
+	width: 100%;
+	height: auto;
+	padding: 2px;
+	background-color: #FFF;
+	border: 1px solid #AAA;
+}
+#bloque-articulos-helpmycash ul li a h3{
+	font-size: 1.5em;
+	margin: 5px auto;
+	padding: 0px;
+	text-align: left;
+}
+#bloque-articulos-helpmycash ul li a p{}
+#bloque-articulos-helpmycash ul li span{
+	color: #AAA;
+}
+#bloque-articulos-helpmycash ul li#logo-helpmycash{
+	position: relative;
+	top: -25px;
+	padding: 0px;
+}
+#bloque-articulos-helpmycash ul li#logo-helpmycash img,
+#bloque-articulos-helpmycash ul li#logo-helpmycashresp img{
+	border: none;
+	padding: 0px;
+}
+#bloque-articulos-helpmycash ul li#logo-helpmycashresp{
+	display: none;
+}
+/*RESPONSIVE*/
+@media (max-width: 768px){
+	#bloque-articulos-helpmycash ul li{
+		display: block;
+		width: 100%;
+		padding: 5px 25px;
+	}
+	#bloque-articulos-helpmycash ul li a img{
+		width: 100%;
+		height: auto;
+		padding: 10px;
+	}
+	#bloque-articulos-helpmycash ul li a h3{
+		font-size: 2em;
+		padding: 15px;
+	}
+	#bloque-articulos-helpmycash ul li#logo-helpmycash{display: none;}
+	#bloque-articulos-helpmycash ul li#logo-helpmycashresp{
+		display: block;
+		margin-bottom: 20px;
+	}
+	#bloque-articulos-helpmycash ul li#logo-helpmycashresp h2{
+		color: #AAA;
+		margin-bottom: 20px;
+	}
+	#bloque-articulos-helpmycash ul li#logo-helpmycashresp img{}
+}

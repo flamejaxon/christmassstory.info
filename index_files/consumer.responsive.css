@@ -1,0 +1,689 @@
+/*************************************************************/
+/*** SMARTPHONE **********************************************/
+/*************************************************************/
+@media (max-width: 767px) {
+  body {min-width: 100% !important;}
+  
+  /** ARREGLOS MOBILE **/
+  .bootstrap-header #rc-cabecera .cabecera-menu-active #rc-cabecera-barra { padding-bottom: 5em !important; }       
+  .bootstrap-header #rc-cabecera #menu-navegacion-container { overflow: scroll !important; padding-bottom: 10em !important; }
+  #rc-cabecera-barra li.camino-de-santiago { background-color: #ec8132 !important; }
+  #rc-cabecera-barra li a span { color: #FFF !important; }
+
+  /* CABECERA PHONE*/
+  img#rc-logo-consumer-cabecera-portada {width:200px;margin-left:1em;}
+  img#rc-logo-consumer-cabecera-interior {width:200px;margin-left:1em;}
+  img#rc-logo-fundacion-cabecera {width:74px;margin-right:1em;}
+
+  /* Pisamos los estilos de red-consumer.ee.css y home.ee.css */
+  #rc-cabecera-container {font-size:.5em;}
+  #rc-cabecera {max-width:100%;padding-top:1em;}
+  #rc-caja-principal {max-width:100%;}
+  #rc-cabecera {font-size:2em}
+
+  /* CABECERA PHONE- enlaces directos */
+  #rc-cabecera #rc-cabecera-enlaces-directos {overflow:hidden;width:100%;text-align:center;margin-bottom:1em;}
+  #rc-cabecera #rc-cabecera-enlaces-directos li {width:auto;float:none;padding: 0 1.5em;}
+  #rc-cabecera #rc-cabecera-enlaces-directos li a {font-size:1.3em;padding:0 .35em}
+  #rc-cabecera #rc-cabecera-enlaces-directos li.social {display:none;}
+  #rc-cabecera #rc-cabecera-enlaces-directos li.portadas {display:none;}
+  #rc-cabecera #rc-cabecera-enlaces-directos li.idiomas {display:none;}
+  #rc-cabecera #rc-cabecera-enlaces-directos li.boletines {display:none;}
+  #rc-cabecera #rc-cabecera-enlaces-directos li.idiomas-mobile {display:block;padding: 0 0.5em;}
+  #rc-caja-principal #rc-banner-superior img {width:100%!important;height:auto;}
+
+  /* MENU PRINCIPAL PHONE*/
+  #rc-cabecera #rc-cabecera-logos-buscador {width:100%;padding:0.3em 0;overflow: visible;}
+  #rc-cabecera #rc-cabecera-logos-buscador #rc-buscador {display:none;}
+  #rc-cabecera #rc-cabecera-barra {width:100% !important;padding:0 0 0 .35em;margin-bottom:0;}
+  #rc-cabecera #rc-cabecera-barra li {border-bottom:1px solid #C32014;}
+  #rc-cabecera #rc-cabecera-barra li a {padding: 0.7em 0.4em 0.7em 0.59em;}
+  #rc-cabecera #rc-cabecera-barra li.primero {border-left: 1px solid #F14438;}
+  #rc-cabecera #rc-cabecera-barra li.ultimo {border-right:1px solid #C32014;}
+
+  #rc-migas-container {display:none;}
+
+  #rc-canal-secciones {padding:3% 3% 0;width:94%;float:none;background:none !important;}
+  #rc-canal-secciones li {font-size:1em;}
+  #rc-canal-secciones li a {line-height:1.6em;font-size: 1.2em;}
+  #rc-canal-secciones li#rc-canal-secciones-primero {display:none;}
+  #rc-canal-secciones-formatos-container-2 {width:100%;}
+  .rc-channel-salud #rc-canal-secciones {background-position:5px 0;}
+  #rc-canal-secciones-destacadas {height:auto;}
+
+  #rc-canal-guias {margin:0;padding-left:3%;padding-right:3%;padding-bottom:0;}
+  #rc-canal-guias li a {line-height:1.6em;font-size:1.2em;font-weight:normal;}
+
+  #rc-utilidades {width:100%;}
+  #rc-utilidades-container .addthis_toolbox {display:none;}
+  #rc-canal-formatos-titulo {margin:0;font-size:1em;}
+  #rc-canal-formatos {padding:1em;}
+
+
+
+  /* ESTRUCTURA GENERAL PHONE*/
+  #rc-contenido {width:100%;margin:0;padding:0;}
+  #contenido-container {width:94%;margin-left:3%;padding:0;}
+  #rc-contenido-container {margin-left:3%;padding:0;width:94%;}
+  #rc-banner-superior a img {margin-bottom:0 !important;height:auto !important;}
+  .category #rc-contenido{box-sizing: border-box;}
+
+  /* PIE PHONE*/
+  #rc-pie-container #buscador {width:100%;padding:0;}
+  #rc-pie-container #buscador form {width:94%;padding:3%;}
+  #rc-pie-container #buscador form .bloque-donde-buscar {width:100%;margin-top:10px;float:left;float:none;}
+  #rc-pie-container #buscador form .bloque-donde-buscar span.label {display:block;margin-bottom:.3em;font-size:1.5em;}
+  #rc-pie-container #buscador form .bloque-donde-buscar label {font-size:1.3em;}
+  #rc-pie-container #buscador form .bloque-donde-buscar input {width:1.5em;}
+  #rc-pie-container #buscador form .bloque-buscar {width:100%;float:none;}
+  #rc-pie-container #buscador form .bloque-buscar input {height:25px;font-size:1.1em;}
+
+  #rc-pie-container #rc-pie {padding:2.5em 3% 0;width:94%;}
+  #rc-pie-container #rc-pie-enlaces-site div h3 {margin-bottom:.8em;font-size:1.6em;}
+  #rc-pie-container #rc-pie-enlaces-site div.eroski,
+  #rc-pie-container #rc-pie-enlaces-site div.interes,
+  #rc-pie-container #rc-pie-enlaces-site div {width:100%;margin-bottom:2em;}
+  #rc-pie-container #rc-pie-enlaces-site div.eroski ul li,
+  #rc-pie-container #rc-pie-enlaces-site div.interes ul li,
+  #rc-pie-container #rc-pie-enlaces-site div.impresa ul li {display:inline-block;width:auto;margin-right:0;margin-bottom:1em;padding:0 .3em;line-height:1em;float:none;border-right: 1px dotted #fff;}
+  #rc-pie-container #rc-pie-enlaces-site div.eroski li:nth-child(2n) {border-right: 1px dotted #fff;}
+  #rc-pie-container #rc-pie-canal-tv {display:none;}
+
+  #rc-pie-logos-validacion {float:none;width:100%;text-align:center;margin-top:2em;}
+  #rc-pie-logos-validacion .enlace-fundacion {margin:0 2em 0 0;}
+  #rc-pie-container #rc-pie .claim {margin:0 0 1em 3%;font-size:11px;}
+  #rc-pie-container #rc-pie-logos {width:100%;padding:1em 0;}
+  #rc-pie-container #rc-pie-logos #rc-pie-logos-enlaces-pie {float:none;}
+
+
+  /* HOME PORTADA PHONE*/
+  /* Buscador PHONE*/
+  #bloque_buscador {margin-bottom:1.5em;}
+  #rc-contenido .BLOQUE-BUSCADOR {width:100%;padding:0;}
+  #bloque_buscador form {width:100%;height:auto;padding:2% 0;float:left;background:#000;}
+  #bloque_buscador .bloque-donde-buscar span.label {font-size:1.4em;margin-right:0;display:block;margin-bottom:5px;}
+  #bloque_buscador .bloque-donde-buscar label {font-size:1.2em;}
+  #bloque_buscador .bloque-donde-buscar input {width:1em;margin-right:.3em;}
+  #bloque_buscador .bloque-donde-buscar label {margin-right:.5em;}
+  #bloque_buscador .bloque-buscar input.campo-buscar {width:64%;float:left;padding:0.5em 0.3em;height:15px;}
+  #bloque_buscador .bloque-buscar input {float:right;width:25%;}
+  #bloque_buscador .bloque-buscar input#buscadorPortadaBuscar {width:22%;height:29px;float:left;margin-left:5px;padding-top:.5em;}
+
+  #bloque_buscador .bloque-interesar {display:none;}
+
+  /* Noticia destacada PHONE*/
+  #rc-contenido #bloque_destacado {margin-top:2%;width:96%;margin:0 0 1em 2%;}
+  #bloque_destacado .contenido-principal ul {margin-top:0;}
+  #bloque_destacado .contenido-principal .img {max-height:12em;min-height:12em;}
+  #bloque_destacado .contenido-principal .img img {display:block;}
+  #bloque_destacado .contenido-principal h2 {font-size:2.2em;line-height:1.1em;margin-bottom:.3em;margin-top:.3em;}
+  #bloque_destacado .contenido-principal p {margin-top:0;margin-bottom:.5em;line-height:1.4em;}
+  #bloque_destacado .contenido-principal ul li {margin-left:.5em;}
+  #bloque_destacado .contenido-principal ul li a {font-size:1.3em;line-height:1.1em;}
+  #bloque_destacado .contenido-principal ul li.destacado {margin-top:3em;}
+  #bloque_destacado .contenido-principal ul li.destacado .img {width:100%}
+  #bloque_destacado .contenido-principal ul li.destacado h2 {font-size:1.7em;line-height:1.2em;}
+  #bloque_destacado .contenido-principal ul {margin-bottom:0;}
+
+  #bloque_subdestacado {width:96%;margin:0 0 0 2%;}
+  #bloque_subdestacado .lista-contenidos ul li {margin-bottom:1em;padding:1em 0 0;border-top: 1px dotted #9C9C9C;border-bottom:none;}
+  #bloque_subdestacado .lista-contenidos ul li:last-child {padding-top:1em;}
+  #bloque_subdestacado .lista-contenidos ul li.destacado {padding:0;border:0;}
+  #bloque_subdestacado .lista-contenidos ul li.destacado:first-child {padding-bottom:0;margin-bottom:1em;}
+  #bloque_subdestacado .lista-contenidos ul li.destacado h3 a {line-height:1.2em;}
+  #bloque_subdestacado .lista-contenidos ul li.destacado p {margin-top:0;line-height:1.4em;}
+  #bloque_subdestacado .lista-contenidos ul li .img {margin-bottom:.3em;}
+
+  .bloque_separador {height:2px;margin-bottom:2em;}
+
+  #bloque_lo_que_mas_te_interesa {width:96%;margin-left:2%;margin-bottom:.5em;}
+  #bloque_lo_que_mas_te_interesa h3 {font-size:1.7em;width:96%;padding:.3em 2%;text-align:center;}
+  #bloque_lo_que_mas_te_interesa ul {margin-top:1em;}
+  #bloque_lo_que_mas_te_interesa ul li {width:91%;padding:1.5em 4% 1em}
+  #bloque_lo_que_mas_te_interesa ul li h4 a {line-height:1.1em;display:block;}
+  #bloque_lo_que_mas_te_interesa ul li h4 {font-size:1.6em;}
+
+  #bloque_separador_2 {display:none;}
+  #bloque_ultimos_comentarios {display:none;}
+
+  #bloque_revista_impresa {width:96%;margin-left:2%;}
+
+  #bloque_banners_a {margin:2em 0;}
+  #bloque_banners_a div.banner_a_0 {display:none;}
+  #bloque_banners_a div.banner_a_1 {display:none;}
+  #bloque_banners_a div.banner_a_2 {width:96%;margin:0 2%;text-align:center;}
+  #bloque_banners_a div.banner_a_2 img {width:100%;}
+
+  #bloque_menu_sabias {width:96%;margin-left:2%;border:none;background:none;}
+  #bloque_menu_sabias .menu-hoy {border:0;width:100%;}
+  #bloque_menu_sabias .menu-hoy h3 {width:95%;font-size:1.8em;}
+  #bloque_menu_sabias .menu-hoy a.Todas {top:9px;right:8px;width:23%;text-align:right;margin-top:0;}
+  #bloque_menu_sabias .menu-hoy ul {padding:0;}
+  #bloque_menu_sabias .menu-hoy li {margin:1em 0 0;width:100%;}
+  #bloque_menu_sabias .menu-hoy li span.recetasResultadosContentListTitulo {font-size:1.5em;}
+  #bloque_menu_sabias .menu-hoy li .recetasResultadosContentListTituloContainer {width:100%;height:auto;}
+  #bloque_menu_sabias .menu-hoy li span.recetasResultadosContentListImgContainer {width:100%;}
+  #bloque_menu_sabias .menu-hoy li img {margin-left:-4em;}
+  #bloque_menu_sabias .menu-hoy li .recetasResultadosContentListPieContainer {width:100%;}
+
+  #bloque_menu_sabias .sabias {display:none;}
+
+  #rc-contenido #bloque_enlaces_menus {margin-bottom:1em;padding:.5em 2%;width:96%;border:none;background:none;}
+  #bloque_enlaces_menus h3 {width:100%;line-height:1em;margin-bottom:.7em;font-size:1.8em;}
+  #bloque_enlaces_menus p {display:none;}
+  #bloque_enlaces_menus ul {width:100%;}
+  #bloque_enlaces_menus ul li {width:auto;margin-right:0%;float:none;clear:none;line-height:1.7em;}
+
+  #bloque_banners_b {display:none;}
+
+  #bloque_video {width:96%;margin-left:2%;margin-top:1em;}
+
+  #bloque_noticias {width:96%;margin-left:2%;margin-top:1.5em;}
+
+  #bloque_infografias {display:none;}
+
+  #bloque_banners_c {display:none;}
+
+  #bloque_fotografia {display:none;}
+
+  #rc-pie-container #rc-pie {width:100%;}
+  #rc-pie-container #rc-pie-enlaces-site div h3 {margin-bottom:.8em;}
+  #rc-pie-container #rc-pie-enlaces-site div.eroski,
+  #rc-pie-container #rc-pie-enlaces-site div.interes,
+  #rc-pie-container #rc-pie-enlaces-site div {width:100%;margin-bottom:2em;}
+  #rc-pie-container #rc-pie-enlaces-site div.eroski ul li,
+  #rc-pie-container #rc-pie-enlaces-site div.interes ul li,
+  #rc-pie-container #rc-pie-enlaces-site div.impresa ul li {display:inline-block;width:auto;margin-right:0;margin-bottom:1em;padding:0 .3em;line-height:1em;float:none;border-right: 1px dotted #fff;}
+  #rc-pie-container #rc-pie-enlaces-site div.eroski li:nth-child(2n) {border-right: 1px dotted #fff;}
+  #rc-pie-container #rc-pie-canal-tv {display:none;}
+
+  #rc-pie-logos-validacion {float:none;width:100%;text-align:center;margin-top:2em;}
+  #rc-pie-logos-validacion .enlace-fundacion {float:none;margin:0;}
+  #rc-pie-container #rc-pie .claim {margin:0 0 1em 3%;font-size:11px;}
+  #rc-pie-container #rc-pie-logos {padding:1em 0 2em}
+  #rc-pie-container #rc-pie-logos #rc-pie-logos-enlaces-pie {float:none;}
+
+  /* Interstitial PHONE*/
+  #fancybox-wrap {left:5% !important;width:88% !important;padding:0 !important;}
+  #fancybox-content {width:100% !important;height:auto !important;border-width:2px !important;}
+  #fancybox-content div {width:100% !important;height:auto !important;}
+  #fancybox-content img {width:100% !important;height:auto !important;}
+
+  /* PAGINADO */
+  #rc-pagination ul li {display:inline-block;margin-bottom:2.2em;}
+
+  /* CONTENIDOS PHONE*/
+  #rc-contenido #contenido-titulo {font-size:2.6em;line-height:1em;}
+  #contenido-subtitulo, #contenido-antetitulo {font-size:1.4em;}
+  #contenido-entradilla {margin:1em 0 1em;padding-top:1em;}
+  #contenido-entradilla .rc-imagen-left {margin:0 0 13px;width:100%;}
+  .entrevista #contenido-entradilla .rc-imagen-left {margin-right:4%;width:35%;}
+  .rc-pie-de-foto {font-size:.9em;}
+  #contenido-entradilla .rc-texto {float:none;width:100%;}
+  #contenido-entradilla p,
+  #contenido-texto p,
+  #contenido-texto li {font-size: 1.3em;line-height: 17px;}
+  #contenido-texto h2 {font-size:1.8em;}
+  #contenido-texto ol,
+  #contenido-texto ul {margin-left:20px;}
+  #rc-contenido blockquote.rc-destacado, #rc-contenido blockquote {width:82%;padding:.2em 0 .2em 15%;margin:1em 0 2em}
+  #contenido-texto .contenido-despiece {margin:1em 0;padding:1em;}
+  #contenido-texto .contenido-despiece h2 {font-size: 1.8em;}
+  #contenido-texto .rc-imagen-left, #contenido-texto .rc-imagen-right {display:block;float:none;margin:0;width:100%;text-align:center;}
+  #contenido-keywords h2 {font-size:1.2em;}
+
+  #menu-derecha {width:96%;margin-left:2%;padding:0;}
+  #menu-derecha .banner {text-align:center;}
+  #menu-derecha .banner img {height: auto !important;width: auto !important;}
+
+  /* Y ADEMAS... PHONE*/
+  #y-ademas h3 {font-size:20px;margin-top:9px;}
+  #y-ademas ul {margin-left:0;}
+  #y-ademas ul li {margin:0 4% 15px 0;width:48%;}
+  #y-ademas ul li:nth-child(even) {margin-right:0;}
+  #boton-ver-mas-sobre {width:55%;}
+
+  /* LO MAS... PHONE */
+  #bloque-lo-mas ol li {margin:0 5px;}
+
+
+  /* MENU DERECHA PHONE */
+  #menu-derecha {margin-left:0;width:100%;}
+  #menu-derecha #menu_suscripcion {width:100%;margin:0 auto 15px;padding:10px 0 15px;border-top:1px solid #4F4F4F;border-bottom:1px solid #4F4F4F;}
+  #menu-derecha #menu_suscripcion h3 {width:51%;margin:0 auto;}
+  #menu-derecha #menu_suscripcion form {width:69%;margin:0 auto;}
+  #menu-derecha .banner {display:none;}
+  #menu-derecha .banner a img {width:auto !important;}
+  #menu-derecha #menu_suscripcion {display:block;}
+  #menu-derecha #menu_banner_1,
+  #menu-derecha #menu_banner_2 {display:block;}
+
+  /* SLIDE BEBE PHONE */
+  #slider-etapas {display:none;}
+
+  /* FICHA PERROS */
+  #mascotas-ficha-raza #contenido-texto th {font-size:2em;}
+  #mascotas-ficha-raza #contenido-texto td {padding-right:0;}
+
+  /* FOTOGRAFIA  PHONE*/
+  #contenido-fotografia-bloque img {width:100%;}
+  #contenido-texto #contenido-fotografia-datos {width:93%;}
+  #contenido-texto #contenido-fotografia-datos li strong {float:none;display:inline;text-align:left;}
+  #contenido-texto #contenido-fotografia-datos li span {display:inline;width:auto;float:none;}
+
+  #contenido-fotografia-list li {width:47%;margin:0 0 1.5em 0;}
+  #contenido-fotografia-list li:nth-child(3n+1) {clear:none;}
+  #contenido-fotografia-list li:nth-child(odd) {clear:left;margin-right:6%;}
+
+  /* INFOGRAFIAS PHONE */
+  #contenido-texto #contenido-infografia-list li {width:47%;margin:0 0 1.5em 0;}
+  #contenido-texto #contenido-infografia-list li:nth-child(3n+1) {clear:none;}
+  #contenido-texto #contenido-infografia-list li:nth-child(odd) {clear:left;margin-right:6%;}
+
+  /* PORTADILLA LISTADO PHONE */
+  #rc-contenido #portadilla-titulo {font-size:2.6em;line-height:1em;margin-bottom:.3em;margin-top:.2em;}
+  #portadilla-bloque-articulos {margin-bottom:0;padding-right: 0}
+  #portadilla-bloque-articulos .rc-imagen {width:100%;border-left:0;border-right:0;float: none; height: auto;}
+  #portadilla-bloque-articulos h3 {font-size:2em;}
+  #portadilla-bloque-articulos .portadilla-articulo-subtitulo, #portadilla-bloque-articulos .portadilla-articulo-fecha{padding: 0 10px;}
+  #portadilla-bloque-articulos .addthis_toolbox {display:none;}
+  #portadilla-bloque-articulos ul {margin-left:0;}
+  #portadilla-bloque-articulos ul li {margin:0 4% 15px 0;width:48%;}
+  #portadilla-bloque-articulos ul li:nth-child(even){margin-right:0;}
+  #portadilla-bloque-articulo-progreso {padding-bottom:0;margin-bottom:10px;border:none;}
+  #portadilla-bloque-articulo-progreso ul li img {min-height:0;}
+  #portadilla-bloque-articulo-progreso ul li .fecha {font-size:1.1em;}
+  #portadilla-bloque-articulo-progreso ul li:first-child, #portadilla-bloque-articulo-progreso ul li:nth-child(3n+1){margin-right: 4%;}
+  #portadilla-bloque-articulo-progreso ul li:last-child {margin-right:0;}
+  #portadilla-bloque-videos {width:100%;}
+  #portadilla-bloque-videos li .portadilla-bloque-videos-img {height: 100px;}
+  #portadilla-bloque-infografias {width:100%;margin-bottom:30px;}
+  #portadilla-bloque-infografias ul li {margin-bottom:1.5em;width: 100%;}
+  #portadilla-bloque-entrevistas {width:100%;}
+  #portadilla-bloque-entrevistas .portadilla-bloque-entrevistas-img-container {height:8em;}
+  #portadilla-bloque-entrevistas .portadilla-bloque-entrevistas-img-container img {top:-32%;}
+  #portadilla-bloque-entrevistas li {margin-left:4.5em;width:64%;}
+  #portadilla-bloque-entrevistas li:last-child {display:block;}
+
+
+  /* BLOQUE-NUEVA-REVISTA PHONE */
+  #bloque_nueva_revista {border: none}
+  #bloque_nueva_revista div.tema-de-portada {left:0;}
+  #bloque_nueva_revista div.guia-de-compra {left:0;}
+  #bloque_nueva_revista div.entrevista-1 {left:0;}
+  #bloque_nueva_revista div.entrevista-2 {left:0;}
+  #bloque_nueva_revista div.la_comida_no_se_tira {left:0;}
+  #bloque_nueva_revista div.sumario {left:0;}
+  #bloque_nueva_revista div.sumario-sumario {left:0;}
+
+
+
+  /* BLOQUE LO-MAS PHONE */
+  #bloque-lo-mas {width: 100%;};
+
+  /* BLOQUE-ULTIMOS-COMENTARIOS-B PHONE*/
+  #bloque-ultimos-comentarios-b {width: 100%;position:relative;left:0;}
+  #bloque-ultimos-comentarios-b ul {width:100%;}
+  #bloque-ultimos-comentarios-b .banner-animate {display:none;}
+
+
+  /* ALI_BLOQUE_BANNERS_NUTRICIONISTA */
+  #ali_bloque_banners_nutricionista {width:100%;}
+  #ali_bloque_banners_nutricionista li {width: 100%;}
+  #ali_bloque_banners_nutricionista li.banner div.banner-nutricionista-container .izquierda {display:none;}
+  #ali_bloque_banners_nutricionista li.banner div.banner-nutricionista-container .derecha {width:100%;}
+
+
+
+
+
+  /* ALI_BLOQUE_BANNERS_MENUS */
+  #ali_bloque_banners_menus {display:none;}
+
+  /* ALI_BLOQUE_BANNER_SEMAFORO */
+  #bloque_banners {display:none;}
+
+
+  /* Pisamos los estilos de 960gs */
+  .container_28 {max-width: 100%;margin: 0;padding: 0;}
+  .grid_1,.grid_2,.grid_3,.grid_4,.grid_5,.grid_6,.grid_7, .grid_8,.grid_9,.grid_10,.grid_11,.grid_12,.grid_13,.grid_14,.grid_15, .grid_16,.grid_17,.grid_18,.grid_19,.grid_20,.grid_21,.grid_22,.grid_23, .grid_24, .grid_25, .grid_26, .grid_27, .grid_28 {max-width: 100%;display:inline;float: left; margin:0; padding:0;}
+
+}
+
+
+
+/*************************************************************/
+/*** TABLET **************************************************/
+/*************************************************************/
+@media (min-width: 768px) and (max-width: 979px) {
+	body {min-width: 100% !important;}
+
+	/* CABECERA TABLET */
+	#rc-cabecera {width:100%;}
+	#rc-cabecera #rc-cabecera-enlaces-directos {width:100%;}
+	#rc-cabecera #rc-cabecera-enlaces-directos li {padding:0 .6em;}
+	#rc-q {width:12em;}
+	#rc-cabecera #rc-cabecera-logos-buscador {width:98%;padding:1.3em 1% .5em;}
+	#rc-cabecera #rc-cabecera-logos-buscador #rc-cabecera-logos {margin-top:5px;}
+	#rc-cabecera #rc-cabecera-logos-buscador #rc-q {width:13em;}
+	#rc-cabecera #rc-cabecera-barra {width:100%;}
+	#rc-cabecera #rc-cabecera-barra li {border-bottom:1px solid #C32014;}
+	#rc-cabecera #rc-cabecera-barra li.ultimo {border-right:1px solid #C32014;}
+
+
+	/* ESTRUCTURA TABLET */
+	#rc-banner-superior img {width:100% !important; height:auto !important}
+	#rc-contenido {width:100% !important;padding:0;}
+
+	#menu-derecha {width:97%;margin-left:1.5%;padding:0;}
+	#menu-derecha .banner {width:30%;float:left;margin-right:3%;margin-bottom:1em;}
+
+	#menu-derecha-lo-mas {clear:both;width:47%;float:left;margin-top:2em;}
+	#menu-derecha-noticias {width:47%;float:right;clear:right;margin-right:1.5%;margin-top:2em;}
+
+	#menu-derecha-twitter,
+	#menu-derecha-ultimos-comentarios,
+	#menu-derecha #banner-6,
+	#menu-derecha #banner-7 {display:none;}
+
+	#rc-canal-secciones {background:none !important;}
+
+	.container_28 .grid_21 {width:98%;padding:0;}
+
+	/* PIE TABLET */
+	#rc-pie-container #rc-pie {padding:2.5em 3% 0;width:94%;}
+	#rc-pie-container #rc-pie-enlaces-site div.interes {width:43%;}
+	#rc-pie-container #rc-pie-enlaces-site div.interes li {width:78%;}
+	#rc-pie-container #rc-pie .claim {width:52%;}
+	#rc-pie-container #rc-pie-logos {width:100%;}
+
+	#rc-pie-container #buscador,
+	#rc-pie-container #buscador form {width:100%;}
+	#rc-pie-container #buscador form .bloque-donde-buscar {width:40%;margin-top:0;float:left;}
+	#rc-pie-container #buscador form .bloque-donde-buscar span.label {display:block;margin-bottom:.3em;}
+	#rc-pie-container #buscador form .bloque-buscar {width:59%;float:right;}
+	#rc-pie-logos-validacion {width:60%;}
+
+
+	/* HOME PORTADA TABLET */
+	#bloque_buscador {width:100%;margin-left:0;margin-right:0;}
+	#bloque_buscador form {width:55.8%;}
+	#bloque_buscador .bloque-buscar input.campo-buscar {width:71%;}
+	#bloque_buscador .bloque-donde-buscar label {margin-right:0;}
+	#bloque_buscador .bloque-interesar {float:right;}
+
+	#bloque_destacado {width:97%;margin-left:1.5%;}
+	#bloque_destacado .contenido-principal {margin-bottom:3em;}
+	#bloque_destacado .contenido-principal .img {width:100%;max-height:20em;}
+	#bloque_destacado .contenido-principal h2 {line-height:1.1em;margin-top:.4em;}
+	#bloque_destacado .contenido-principal ul {margin-bottom:1em;}
+	#bloque_destacado .contenido-principal li {width:100%;}
+
+	#bloque_subdestacado {width:97%;margin-left:1.5%;}
+	#bloque_subdestacado .lista-contenidos ul li {width:47%;float:left;margin:0;padding:1.2em 0;border-top: 1px dotted #9C9C9C;border-bottom:0;}
+	#bloque_subdestacado .lista-contenidos ul li.destacado {margin-bottom:0;padding:0 0 2em;border:none;}
+	#bloque_subdestacado .lista-contenidos ul li.destacado:first-child {margin-bottom:0;padding:0;}
+	#bloque_subdestacado .lista-contenidos ul li:nth-child(odd) {clear:left;margin-right:5.5%}
+	#bloque_subdestacado .lista-contenidos ul li:last-child {border-bottom: none;padding:1.2em 0;}
+
+	#bloque_separador_1 {height:10px;}
+
+	#bloque_subdestacado .lista-contenidos ul li.destacado p {line-height:1.3em;}
+
+	#bloque_lo_que_mas_te_interesa {width:31%;padding-right:0;margin-right:0;margin-left:1.5%;}
+	#bloque_lo_que_mas_te_interesa ul {margin-bottom:0;}
+	#bloque_lo_que_mas_te_interesa ul li {width:88%;}
+	#bloque_lo_que_mas_te_interesa ul li:last-child {margin-bottom:0;}
+	#bloque_lo_que_mas_te_interesa ul li h4 a {line-height:1.1em;}
+	#bloque_lo_que_mas_te_interesa ul li span.num {width:17%;}
+	#bloque_lo_que_mas_te_interesa ul li h4 {width:72%;}
+
+	#bloque_ultimos_comentarios {width:27%;margin:0 2%;padding-right:0;}
+
+	#bloque_revista_impresa div h3 {left:2.7em;}
+	#bloque_revista_impresa {width:35%;margin-left:0;}
+	#bloque_revista_impresa div.detalle-revista .texto {width:58%;}
+
+	#bloque_banners_a #bloque-twitter {width:36em;}
+	#bloque_banners_a div.banner_a_0 {padding:0;}
+	#bloque_banners_a div.banner_a_1 {display:none;}
+	#bloque_banners_a div.banner_a_2 {width:46%;margin:0;text-align:center;}
+
+	#bloque_menu_sabias {width:100%;border:none;margin:0;background-position:right 37em;}
+	#bloque_menu_sabias .menu-hoy {width:100%;border:0;}
+	#bloque_menu_sabias .menu-hoy li {width:24em;}
+	#bloque_menu_sabias .menu-hoy li .recetasResultadosContentListTituloContainer {height:auto;}
+	#bloque_menu_sabias .sabias {width:100%}
+	#bloque_menu_sabias .sabias p {margin-bottom:0;}
+	#bloque_menu_sabias .sabias {margin-bottom:2em;}
+
+	#bloque_enlaces_menus {width:94%;margin:0;padding:1.5em 3%;border-top:1px solid #000;}
+	#bloque_enlaces_menus ul {width:98%;}
+	#rc-contenido #bloque_enlaces_menus {background:none;margin-bottom:2em}
+	#rc-contenido #bloque_enlaces_menus h3 {line-height:1em;}
+
+	#bloque_video {width:61%;margin-bottom:3em;}
+
+	#bloque_noticias {width:97%;margin-left:1.5%;}
+	#bloque_noticias #noticias-sindicadas div.noticias-sindicadas-texto a {font-size:1.5em;}
+
+	#bloque_infografias {width:97%;margin-left:1.5%;padding-right:0;}
+
+	#bloque_banners_b {text-align:center;width:auto;padding:0;}
+
+	#bloque_banners_c {display:none;}
+
+	#bloque_fotografia {width:97%;margin:3em 0 0 1.5%;}
+	#bloque_fotografia .titulo-autor span.titulo {font-size:1.7em;}
+
+	#bloque_foto_link_todas div.bloque_foto_link_todas_centrado {width:70%;}
+
+	/* PAGINACION */
+	#rc-pagination {margin-top:2em;}
+	#rc-pagination ul {margin-top:1.5em;}
+	#rc-pagination ul li {font-size: 1.6em;}
+
+	/* CONTENIDO TABLET */
+	#rc-utilidades {width:100%;}
+	#rc-formatos-container {display:block;}
+	#rc-canal-formatos-titulo {padding:14px 10px 0 0;background-position:right 19px;}
+	#rc-migas-container {width:29em;}
+	#rc-utilidades .addthis_toolbox {width:30em;}
+
+	#menu-pie {overflow:hidden;margin-bottom:30px;}
+	#menu-pie #bloque_noticias {margin-left:30px;width:305px;}
+
+	#menu-derecha .banner {display:none;}
+	#menu-derecha #menu_suscripcion {margin-top:50px;display:block;}
+	#menu-derecha #menu_banner_1,
+	#menu-derecha #menu_banner_2 {display:block;}
+
+	/* fotografia */
+	#contenido-fotografia-list {overflow:hidden;border-bottom:1px solid #4F4F4F;padding-bottom:10px;margin-bottom:20px;}
+
+	/* PORTADILLA LISTADO TABLET */
+	#rc-contenido #portadilla-titulo {margin-left:5px;}
+	#portadilla-bloque-articulos {margin-bottom:0;}
+	#portadilla-bloque-videos {width:30% !important;margin-right:3%;}
+	#portadilla-bloque-videos li {margin-bottom:2.5em;}
+	#portadilla-bloque-infografias {width:30% !important;float:left;clear:none;margin-right:3%;}
+	#portadilla-bloque-infografias ul {margin:0 0 0 7%;}
+	#portadilla-bloque-infografias ul li {margin:0 0 1em 0;}
+	#portadilla-bloque-entrevistas {width:30% !important;float:left;}
+	#portadilla-bloque-entrevistas .portadilla-bloque-entrevistas-img-container {height:auto;}
+	#portadilla-bloque-entrevistas li:last-child {display:block;}
+
+
+
+        /*#bloque-lo-mas {}; */
+
+        #bloque-ultimos-comentarios-b .banner-animate {display: none;}
+        #bloque-ultimos-comentarios-b {width: 44.5%;margin-left:0;}
+        #bloque-ultimos-comentarios-b ul {width: 100%;}
+        #bloque-ultimos-comentarios-b .banner-animate {display: none;}
+
+
+
+  /* ALI_BLOQUE_BANNERS_NUTRICIONISTA */
+  #ali_bloque_banners_nutricionista {width:99%;}
+  #ali_bloque_banners_nutricionista li {width: 100%;}
+  #ali_bloque_banners_nutricionista li.banner div.banner-nutricionista-container .izquierda {display:none;}
+  #ali_bloque_banners_nutricionista li.banner div.banner-nutricionista-container .derecha {width:100%;}
+
+
+
+  /* ALI_BLOQUE_BANNERS_MENUS */
+  #ali_bloque_banners_menus {display:none;}
+
+  /* ALI_BLOQUE_BANNER_SEMAFORO */
+  #bloque_banners {display:none;}
+
+}
+
+/* ESTILOS PARA EL NUEVO GRUPO DE BOTONES DE COMPARTIR (SHARE-WRAPPER) */
+/* Ajustar la media-query para los tamaños especificados en el CSS precedente */
+@media all and (max-width: 699px) {
+#share-wrapper {
+    bottom: 0;
+    position: fixed;
+    padding: 5px 5px 0px 5px;
+    background: #EBEBEB;
+    width: 100%;
+    margin: 0px;
+    -webkit-box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 -1px 4px rgba(0,0,0,0.15);
+    -o-box-shadow: 0 -1px 4px rgba(0,0,0,0.15);
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
+}
+#share-wrapper ul.share-inner-wrp {
+    list-style: none;
+    margin: 0px auto;
+    padding: 0px;
+    text-align: center;
+    overflow: auto;
+}
+#share-wrapper li.button-wrap {
+display: inline-block;
+width: 32px!important;
+margin: 0px;
+padding: 0px;
+margin-left:0px!important;
+}
+#share-wrapper li.button-wrap > a {
+    height: 32px;
+    display: inline-block;
+    text-indent: -10000px;
+    width: 32px;
+    padding-right: 0;
+    float: left;
+}
+
+}
+
+
+/**************** NUEVA HOME ALIMENTACIÓN ********************/
+
+
+#ali_bloque_formulario_perfil .perfil-nutricional-form-container-resultados {
+    position: relative;
+    top: -10px;
+    left: 3px;
+}
+#ali_bloque_formulario_perfil #perfil-nutricional-result-container #perfil-nutricional-result {
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#bloque-lo-mas #bloque-lo-mas-links-1 li:last-child {
+    border-bottom: 1px solid #d1d1d1;
+    margin-bottom: 45px;
+}
+#ali_bloque_banners_nutricionista {
+    background: url("/wp-content/uploads/static/common/imgs/bg-consultorio.jpg") no-repeat scroll left center / 100% auto rgba(0, 0, 0, 0);
+    margin-top: 1em;
+    overflow: hidden;
+}
+#ali_bloque_banners_nutricionista ul .banner {
+margin-right: 0;
+}
+#ali_bloque_banners_nutricionista .banner-nutricionista-container h2 {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 2.2em;
+    padding: 0.25em 0.75em;
+    text-transform: uppercase;
+}
+#ali_bloque_banners_nutricionista li.banner div.banner-nutricionista-container p {
+    text-shadow: 1px 1px 2px #fff, 0 0 8px #fff;
+    padding: 0 1em;
+    line-height: 1.5em
+}
+#ali_bloque_banners_nutricionista .banner-nutricionista-container a {
+    font-size: 1.4em;
+    margin: 0 auto 1.75em;
+    padding: 0.75em 1.5em;
+    display: block;
+    width: 35%;
+    min-width: 200px;
+    text-align: center;
+}
+
+/*************************************************************/
+/**************** TABLET O MENOR *****************************/
+/*************************************************************/
+@media (max-width: 979px) {
+#rc-caja-principal-container{
+    margin: 0 30px;
+}
+#rc-contenido-container {
+    margin: 0;
+    width: 100%;
+}
+#ali_bloque_recetas.grid_28 {
+    width: 99%;
+}
+#ali_bloque_recetas .contenido-principal #recetasQueMasOsGustan {
+    float: none;
+}
+#ali_bloque_receta_destacada.grid_14 {
+    border: none;
+    float: none;
+    width: 100%;
+}
+#ali_bloque_receta_destacada .contenido-principal {
+    width: 100%;
+}
+#ali_bloque_receta_destacada .contenido-principal .img {
+    margin: auto;
+    max-width: 500px;
+}
+#ali_bloque_formulario_perfil #perfil-nutricional-submit-container input {
+    width: 75%;
+    display: block;
+    margin: auto;
+}
+
+
+}
+
+@media (max-width: 767px) {
+#bloque-lo-mas #bloque-lo-mas-links-1 li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+}
+
+@media (max-width: 576px) {
+
+#rc-caja-principal-container{
+    margin: 0 ;
+}
+#rc-contenido{
+    padding: 0 15px;
+}
+
+#rc-contenido blockquote {
+    width: 80% !important;
+}
+}

@@ -1,0 +1,40 @@
+jQuery.noConflict(); 
+
+jQuery(document).ready(function ($) {
+  $( ".navbar-toggler-rc-cabecera" ).click(function() {
+    $( "#rc-cabecera-barra" ).addClass( "rc-cabecera-barra-active" );
+    $( ".cabecera-menu" ).addClass( "cabecera-menu-active" );
+    jQuery("#rc-temas-alimentacion,\
+        #rc-temas-salud,\
+        #rc-temas-seguridad-alimentaria,\
+        #rc-temas-bebe,\
+        #rc-temas-medio-ambiente,\
+        #rc-temas-mascotas,\
+        #rc-temas-solidaridad,\
+        #rc-temas-economia,\
+        #rc-temas-tecnologia,\
+        #rc-temas-bricolaje,\
+        #rc-temas-educacion").css('visibility', 'visible');
+  });
+  $( ".fa-close" ).click(function() {
+    if (jQuery("#menu-navegacion-container").is(":visible")) {
+      jQuery("#rc-temas-alimentacion,\
+        #rc-temas-salud,\
+        #rc-temas-seguridad-alimentaria,\
+        #rc-temas-bebe,\
+        #rc-temas-medio-ambiente,\
+        #rc-temas-mascotas,\
+        #rc-temas-solidaridad,\
+        #rc-temas-economia,\
+        #rc-temas-tecnologia,\
+        #rc-temas-bricolaje,\
+        #rc-temas-educacion").css('visibility', 'visible');
+      jQuery( ".navbar-toggler-rc-cabecera" ).hide();
+      jQuery("#menu-navegacion-container").hide();
+    } else {
+      $( "#rc-cabecera-barra" ).removeClass( "rc-cabecera-barra-active" );
+      $( ".cabecera-menu" ).removeClass( "cabecera-menu-active" );
+      jQuery( ".navbar-toggler-rc-cabecera" ).show();
+    }
+  });
+});

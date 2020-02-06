@@ -1,0 +1,76 @@
+/* Definimos los datos en base 135 y 182 */
+/*CONTENEDOR*/
+
+.NUS-LIVE-container{width:100%;overflow:hidden;clear:both;} 
+.NUS-LIVE-container.base-135{width:100%}
+.NUS-LIVE-container.base-182{width:98em}
+
+
+/* Elementos de ESTRUCTURA que definen la cuadricula en la que se encajan los bloques de contenido */
+/* Elementos que definen el ANCHO de cada uno de las COLUMNAS de contenido. */
+div.NUS-LIVE-container .NUS-LIVE-column-final{margin-right:0}
+div.NUS-LIVE-container .NUS-LIVE-column{float:left;overflow:hidden}
+/* base 182 */
+.base-182 .NUS-LIVE-column{margin-right:1.65em} 
+.base-182 .NUS-LIVE-column-1{width:18.2em}
+.base-182 .NUS-LIVE-column-2{width:38.1em}
+.base-182 .NUS-LIVE-column-3{width:58em}
+.base-182 .NUS-LIVE-column-4{width:77.9em}
+.base-182 .NUS-LIVE-column-5{width:97.8em}
+
+/* Elementos que definen el ANCHO de cada uno de los BORDES de columnas y sus bloques. */
+div.NUS-LIVE-container .NUS-LIVE-column-border{overflow:hidden;padding:1em;border:0.1em solid #ccc} /* Todos llevan 22 px menos que los .NUS-LIVE-column, por el borde mas el padding */
+/* base 182 */
+.base-182 .NUS-LIVE-column-border-1, .base-182 .NUS-LIVE-column-border-1 .NUS-LIVE-block{width:16em}
+.base-182 .NUS-LIVE-column-border-2, .base-182 .NUS-LIVE-column-border-2 .NUS-LIVE-block{width:35.9em}
+.base-182 .NUS-LIVE-column-border-3, .base-182 .NUS-LIVE-column-border-3 .NUS-LIVE-block{width:55.8em}
+.base-182 .NUS-LIVE-column-border-4, .base-182 .NUS-LIVE-column-border-4 .NUS-LIVE-block{width:75.7em}
+.base-182 .NUS-LIVE-column-border-5, .base-182 .NUS-LIVE-column-border-5 .NUS-LIVE-block{width:95.6em}
+
+
+
+/* Elementos que definen el ANCHO de cada uno de los BLOQUES de contenido. */
+div.NUS-LIVE-container .NUS-LIVE-block{float:left;overflow:hidden}
+div.NUS-LIVE-container .NUS-LIVE-block-final{margin-right:0;float:right; width: 100%;}
+/* base 135 */
+.base-135 .NUS-LIVE-block{margin:0} /* Solo puede haber 2 bloques como maximo, asi que no importa el margin*/
+.base-135 .NUS-LIVE-block-1{width:13.5em}
+.base-135 .NUS-LIVE-block-2{width:28em}
+/* base 182 */
+.base-182 .NUS-LIVE-block{margin-right:1.65em}
+.base-182 .NUS-LIVE-block-1{width:18.2em}
+.base-182 .NUS-LIVE-block-2{width:38.1em}
+.base-182 .NUS-LIVE-block-3{width:58em}
+.base-182 .NUS-LIVE-block-4{width:77.9em}
+.base-182 .NUS-LIVE-block-5{width:97.8em}
+
+/* Elementos que definen el ANCHO de cada uno de los SEPARADORES de contenido. */
+div.NUS-LIVE-container .NUS-LIVE-separator,div.NUS-LIVE-container .NUS-LIVE-separator hr{clear:both;float:none;margin:0;padding:0;border:0;display:none}
+/* base 135 */
+.base-135 .NUS-LIVE-separator-1{width:13.5em}
+.base-135 .NUS-LIVE-separator-2{width:28em}
+/* base 182 */
+.base-182 .NUS-LIVE-separator-1{width:18.2em}
+.base-182 .NUS-LIVE-separator-2{width:38.1em}
+.base-182 .NUS-LIVE-separator-3{width:58em}
+.base-182 .NUS-LIVE-separator-4{width:77.9em}
+.base-182 .NUS-LIVE-separator-5{width:97.8em}
+
+
+/* Elementos que definen el ANCHO de cada uno de los BORDES de contenido. */
+div.NUS-LIVE-container .NUS-LIVE-border{overflow:hidden} /* Todos llevan 2 px menos que los .NUS-LIVE-block, por el borde */
+/* base 135 */
+.base-135 .NUS-LIVE-border-1{width:13.3em}
+.base-135 .NUS-LIVE-border-2{width:27.8em}
+/* base 182 */
+.base-182 .NUS-LIVE-border-1{width:18em}
+.base-182 .NUS-LIVE-border-2{width:37.9em}
+.base-182 .NUS-LIVE-border-3{width:57.8em}
+.base-182 .NUS-LIVE-border-4{width:77.7em}
+.base-182 .NUS-LIVE-border-5{width:97.6em}
+
+@media (max-width: 769px){
+.nota_de_prensa-template-default .NUS-LIVE-container.base-135{ width: 100%;}
+
+
+}

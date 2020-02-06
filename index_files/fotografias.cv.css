@@ -1,0 +1,21 @@
+/* FOTOGRAFIAS */
+
+div#enviarFotoIntro{width:100%;overflow:hidden; display: flex; margin-bottom: 3rem;}
+div#enviarFotoIntro div.rc-bloque-enfatizado{width:30%;float:none;display: flex; flex-direction: column;}
+div#enviarFotoIntro div.enviarFotografiaTexto1{width:60%;float:none;margin-right:1.5em;}
+
+#enviar-fotografia-licencia{display:block;float:left;margin-right:1em}
+#enviar-fotografia-licencia img{display:block;}
+#form-enviar-fotografia {overflow:hidden;height:100%; background:#ebebeb url("/wp-content/uploads/static/common/imgs/bk.enviar-fotografia.png") right top no-repeat;}
+#form-enviar-fotografia label{display:block;clear:both;float:left;width:25em;margin-right:1em;font-weight:bold;text-align:right;}
+#form-enviar-fotografia input, #form-enviar-fotografia textarea{width:30em;padding:0.4em;float:left;font-size:1em;font-weight:bold;color:#999;}
+#form-enviar-fotografia p{clear:both;overflow:hidden;margin:1em 0;}
+input#form-enviar{margin-left:26em;width:7em;margin-top:1em;background:#e20a16;border:0.1em solid #aa0009;color:#fff;}
+.form-error{color:red}
+
+@media (max-width: 576px){
+	#enviarFotoIntro div.enviarFotografiaTexto1, #enviarFotoIntro div.rc-bloque-enfatizado{width: 100% !important; float: none;}
+	div#enviarFotoIntro{flex-direction: column;}
+	div#enviarFotoIntro div.enviarFotografiaTexto1{margin-right:0;}
+	#form-enviar-fotografia input, #form-enviar-fotografia textarea{ width: 100%; float: none;}
+}

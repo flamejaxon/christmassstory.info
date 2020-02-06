@@ -1,0 +1,22 @@
+function controlCapa1Cookies(){var existe=existeCookieName('cookiesaceptadas');if(!existe){var host=window.location.host;var domain=host.substring(host.indexOf("."),host.length);if(host.indexOf("aprecioseguros")>-1&&domain===".com")domain="aprecioseguros.com";document.cookie="acceptCookies=; path=/; domain="+domain+"; expires="+new Date(0).toUTCString();}}
+function existeCookieName(c_name){var c_value=document.cookie;var c_start=c_value.indexOf(" "+c_name+"=");if(c_start==-1){c_start=c_value.indexOf(c_name+"=");}
+if(c_start==-1)return false;else return true;}
+function sendEventGuardar(){sendEventBotonesCookies();}
+function sendEventActivarTodas(){sendEventBotonesCookies();}
+function sendEventBotonesCookies(){var c_value=getValueCookiesAceptadas();if(c_value==null||c_value==-1){}else{var cookiesEnCookie=JSON.parse(c_value);for(var i=0;i<cookiesEnCookie.length;i+=1){sendEvent('RGPD','TerceraCapa',textoTealium("htmlcookies_"+cookiesEnCookie[i].nombre));}}}
+function activarTodasLasCookies(){var inputs=document.getElementsByTagName("input");for(i=0;i<inputs.length;i++){if(inputs[i].type=="checkbox"){if(inputs[i].id.substring(0,12)=="htmlcookies_"){document.getElementById(inputs[i].id).checked=true;}}}}
+function textoTealium(id){var check=document.getElementById(id).checked;var nomCookie=id.substring('htmlcookies_'.length,id.lenth);if(check)return"A-"+nomCookie;else return"D-"+nomCookie;}
+function getValueCookiesAceptadas(){var c_name="cookiesaceptadas";var c_value=document.cookie;var c_start=c_value.indexOf(" "+c_name+"=");if(c_start==-1){c_start=c_value.indexOf(c_name+"=");}
+if(c_start==-1){c_value=null;}else{c_start=c_value.indexOf("=",c_start)+1;var c_end=c_value.indexOf(";",c_start);if(c_end==-1){c_end=c_value.length;}
+c_value=unescape(c_value.substring(c_start,c_end));}
+return c_value;}
+function existeCookieAceptadas(){var c_name="cookiesaceptadas";var c_value=document.cookie;var c_start=c_value.indexOf(" "+c_name+"=");if(c_start==-1){c_start=c_value.indexOf(c_name+"=");}
+if(c_start==-1){c_value=null;}else{c_start=c_value.indexOf("=",c_start)+1;var c_end=c_value.indexOf(";",c_start);if(c_end==-1){c_end=c_value.length;}
+c_value=unescape(c_value.substring(c_start,c_end));}
+if(c_value!=null&&c_value.length>1)return true;else return false;}
+function getValueCookiePreference(nombreBus){var c_value=getValueCookiesAceptadas();if(c_value==null||c_value==-1){}else{var cookiesEnCookie=JSON.parse(c_value);for(var i=0;i<cookiesEnCookie.length;i+=1){var esSeleccionado=cookiesEnCookie[i].valor;var nombreActual=cookiesEnCookie[i].nombre;if(nombreBus===nombreActual)return esSeleccionado;}}}
+function representaSeleccionCookiesUsu(){var c_value=getValueCookiesAceptadas();if(c_value==null||c_value==-1){}else{var cookiesEnCookie=JSON.parse(c_value);for(var i=0;i<cookiesEnCookie.length;i+=1){var esSeleccionado=cookiesEnCookie[i].valor;if(esSeleccionado==="1"){document.getElementById("htmlcookies_"+cookiesEnCookie[i].nombre).checked=true;}
+else{document.getElementById("htmlcookies_"+cookiesEnCookie[i].nombre).checked=false;}}}}
+function getTextoCookiedeCookies(){var texto="";var inputs=document.getElementsByTagName("input");for(i=0;i<inputs.length;i++){if(inputs[i].type=="checkbox"){if(inputs[i].id.substring(0,12)=="htmlcookies_"){var valor=0;if(inputs[i].checked)valor=1;var nombreCookie=inputs[i].id.substring(12,inputs[i].id.length);texto=texto+"{\"nombre\":\""+nombreCookie+"\",\"valor\":\""+valor+"\"},";}}}
+texto=texto.substring(0,(texto.length-1));return texto;}
+function creaCookiesSeleccionCookies(){var host=window.location.host;var domain=host.substring(host.indexOf("."),host.length);if(host.indexOf("aprecioseguros")>-1&&domain===".com")domain="aprecioseguros.com";var expires=new Date();expires.setDate(expires.getDate()+180);var texto="cookiesaceptadas=["+getTextoCookiedeCookies()+"];expires="+expires.toGMTString()+";domain="+domain+";path=/";document.cookie=texto;}

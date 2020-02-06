@@ -1,0 +1,109 @@
+#menu-navegacion-precontainer {border:3px dashed  #ff0000;}
+#menu-navegacion-container {overflow:hidden;background:#ffffff;float:left;position:absolute;z-index:9999;border:1px solid #ccc;border-top:none;width:97.8em;}
+
+#menu-navegacion {list-style:none;position:relative;top:0;left:0;}
+/* Clase para los elementos que sólo deben ser visibles en responsive */
+#menu-navegacion .only-responsive {}
+/* Clase para los elementos que sólo deben ser visibles en estándar */
+#menu-navegacion .only-standard {}
+
+#menu-navegacion #secciones {border:1px dashed #000;}
+#menu-navegacion #guias {border:1px dashed #ff0000;}
+
+#menu-navegacion li span.titulo {font-family: 'fs_lolabold';
+font-size: 20px;
+border: none;
+color: #e42415;
+text-decoration: none;
+display:block;
+padding:0.5em 0;
+}
+
+#menu-navegacion li.block {float: left;border-right: 1px solid #ccc;padding: 0 1em 2em 1em;}
+#menu-navegacion li.block-ultimo {clear:left;}
+
+#menu-navegacion ul {list-style:none;margin:0;padding:0;}
+#menu-navegacion ul li {padding-bottom:0.5em;}
+#menu-navegacion ul li a {color:#666;text-transform: uppercase;font-family: arial, helvetica, sans-serif;font-size:13px;line-height:normal;}
+#menu-navegacion li.secciones {width: calc(100% / 7);}
+#menu-navegacion li.guias {}
+#menu-navegacion li.destacados {border:none;}
+#menu-navegacion li.destacados article.highlight-container{width:200px;}
+#menu-navegacion li.destacados figure.image-container{overflow:hidden;width:100%;height:100px;border:1px solid #ccc;margin-bottom:0.5em}
+#menu-navegacion li.destacados figure.image-container img {width:100%;/*margin-top:-15%*/;}
+#menu-navegacion li.destacados li {float:left;padding:0 2em 0 0;}
+#menu-navegacion li.destacados article.highlight-container span.title {display:block;text-align:left;}
+#menu-navegacion li.tipos {display:block;clear:both;border-top:1px solid #ccc;border-right:none;padding:1em 1em 0 1em;width:100%;}
+#menu-navegacion li.tipos ul li {float:left;padding:0 0.7em;border-right:1px solid #ccc;}
+#menu-navegacion .alpha {padding-left:0;margin-left:0;border-left:none;}
+#menu-navegacion .omega {padding-right:0;margin-right:0;border-right:none;}
+
+/*#menu-navegacion {width:100%;clear:both;display:block;float:left;list-style:none;margin:0;padding:1em 0;background:url(/wp-content/uploads/static/common/imgs/estilo-eroski/ico.senal.png) 0 0 no-repeat;}*/
+#menu-navegacion {width:100%;clear:both;display:block;float:left;list-style:none;margin:0;padding:1em 0;background:none;}
+.rc-channel-alimentacion #menu-navegacion {background-position:32px 0;}
+.rc-channel-salud #menu-navegacion {background-position:118px 0;}
+.rc-channel-seguridad-alimentaria #menu-navegacion {background-position:210px 0;}
+.rc-channel-bebe #menu-navegacion {background-position:320px 0;}
+.rc-channel-medio-ambiente #menu-navegacion {background-position:390px 0;}
+.rc-channel-mascotas #menu-navegacion {background-position:475px 0;}
+.rc-channel-solidaridad #menu-navegacion {background-position:555px 0;}
+/*
+.rc-channel-economia-domestica #rc-canal-subcanales,
+.rc-channel-motor #rc-canal-subcanales,
+.rc-channel-viajes #rc-canal-subcanales,
+.rc-channel-vivienda #rc-canal-subcanales {background:#33393C url(/wp-content/uploads/static/common/imgs/estilo-eroski/ico.senal.png) 648px 0 no-repeat;}
+*/
+.rc-channel-economia-domestica #menu-navegacion,
+.rc-channel-motor #menu-navegacion,
+.rc-channel-viajes #menu-navegacion,
+.rc-channel-vivienda #menu-navegacion {background-position:635px 0;}
+.rc-channel-tecnologia #menu-navegacion {background-position:715px 0;}
+.rc-channel-bricolaje #menu-navegacion {background-position:791px 0;}
+.rc-channel-educacion #menu-navegacion {background-position:868px 0;}
+.rc-channel-viajes #menu-navegacion {}
+.rc-channel-vivienda #menu-navegacion {}
+
+#menu-navegacion-home,
+#menu-navegacion-alimentacion,
+#menu-navegacion-salud,
+#menu-navegacion-seguridad-alimentaria,
+#menu-navegacion-bebe,
+#menu-navegacion-medio-ambiente,
+#menu-navegacion-mascotas,
+#menu-navegacion-solidaridad,
+#menu-navegacion-economia,
+#menu-navegacion-tecnologia,
+#menu-navegacion-bricolaje,
+#menu-navegacion-educacion {display:none;}
+
+/* ZONA DE CONFIGURACIÓN INICIAL DEL MENÚ Y MEDIA QUERY */
+/* MENU SUPERIOR RESPONSIVE, NOS ASEGURAMOS DE QUE NO SEA VISIBLE EN UN PRINCIPIO */
+.slicknav_menu {
+	display:none;
+}
+
+#rc-canal-subcanales {display:none;}
+#menu-navegacion-container {display:none;}
+#rc-canal-secciones-formatos-container-1 {display:none;}
+#rc-formatos-container {display:none;} 
+#menu-navegacion-container .hide-standard {display:none!important;}
+#menu-navegacion li.tipos ul li.alpha {padding-left:0;margin-left:0;border-left:none;}
+#menu-navegacion li.tipos ul li.omega {padding-right:0;margin-right:0;border-right:none;}
+
+@media screen and (max-width: 980px) {
+    
+	/* #rc-cabecera-barra es el menú no responsive */
+	#rc-cabecera-barra {}
+        #menu-navegacion-container {display:none;}
+        #rc-canal-secciones-formatos-container-1 {display:none;}
+        #rc-formatos-container {display:none;}
+        #menu-navegacion-container .hide-standard {display:block;}
+        
+        .slicknav_nav a img {width:100%;}
+        
+        .slicknav_menu {
+		display:block;
+	}
+        
+        
+}

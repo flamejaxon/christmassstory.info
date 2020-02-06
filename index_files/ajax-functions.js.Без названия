@@ -1,0 +1,31 @@
+/**
+ * Función utilizada por el sistema de votaciones en los posts de tipo "encuesta".
+ * @param {string} contentKey
+ * @param {string} callbackFunction
+ * @param {string} callbackFunctionParams
+ * @returns
+ */
+function getAjaxDataVotes(contentKey, callbackFunction, callbackFunctionParams) {    
+    jQuery.ajax({
+        type : 'GET',
+        url : ajaxurl + '?contentKey=' + contentKey,
+        data : {
+            action: 'votes_addvote'
+        },
+        error: function() {
+            alert('Error al votar!');
+        },
+        success: function(response) {
+            response = response.replace(/^\s*|\s*$/g, "");
+            response = response.replace(/\n/g, '');
+            response = response.replace(/\r/g, '');
+            response = response.replace(/"/g, '&quot;');
+            if (callbackFunctionParams == null) {
+              eval(callbackFunction + '("'+response+'")');
+            }
+            else {
+              eval(callbackFunction + '("'+response+'", "'+callbackFunctionParams+'")');
+            }
+        }
+    });   
+}
